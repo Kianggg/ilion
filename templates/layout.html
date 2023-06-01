@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+        <!-- CSS and Font -->
+        <link href="{{ url_for ('static' , filename='styles.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Squada+One">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+        <!-- Site Title -->
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <!-- Banner Image -->
+        <img src="{{ url_for ('static' , filename='banner.png') }}" class="banner" alt="Team Ilion"></img>
+        <a href="/"><img src="{{ url_for ('static' , filename='ilion_logo.png') }}" class="logo" alt="Sled Dog Sanctuary"></a>
+
+        <!-- Page Title-->
+        <div class="title">{{ self.title() }}</div>
+
+        <div id="wrapper">
+
+          <!-- Sidebar -->
+          <div id="sidebarSpacing">
+            <div id="mainSidebar" class="sidebar">
+              <ul>
+                <li><a href="/about" id="about"><em>ABOUT</em></a></li>
+
+                <!-- Very jank offset so that it matches the other buttons -->
+                <li>
+                <button class="accordion"><em>DOGS</em></button>
+                <div class="teamsPanel">
+                  <p>
+                    <ul>
+                      <li><a id="teamsPopout" class="popout" href="/team" id="staff"><em>TEAM ILION</em></a></li>
+                      <li><a id="teamsPopout" class="popout" href="/retired" id="retired"><em>KENNEL</em></a></li>
+                    </ul>
+                  </p>
+                </div>
+                </li>
+
+                <li>
+                  <button class="accordion"><em>FACILITIES</em></button>
+                  <div class="teamsPanel">
+                      <p>
+                          <ul>
+                          <li><a id="teamsPopout" class="popout" href="/clinic" id="clinic"><em>CLINIC</em></a></li>
+                          <li><a id="teamsPopout" class="popout" href="/cafe" id="cafe"><em>CAFE</em></a></li>
+                          <li><a id="teamsPopout" class="popout" href="/salon" id="salon"><em>DOG SALON</em></a></li>
+                          <li><a id="teamsPopout" class="popout" href="/daycare" id="daycare"><em>DAY CARE</em></a></li>
+                          </ul>
+                      </p>
+                  </div>
+              </li>
+
+                <li><a href="/sponsors" id="sponsors"><em>SPONSORS</em></a></li>
+                <li><a href="/blog" id="blog"><em>BLOG</em></a></li>
+                <li><a href="/support" id="support"><em>SUPPORT US</em></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Main Site Contents -->
+          {% block body %}
+          {% endblock %}
+
+        </div>
+
+        <!-- Javascript for Accordion sidebar, I got this from W3Schools -->
+        <script>
+          var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    /* Deselect any other accordions and hide their contents */
+                    for (n = 0; n < acc.length; n++) {
+                        if (this != acc[n]) {
+                            acc[n].classList.remove("active");
+                            acc[n].nextElementSibling.style.display = "none";
+                        }
+                    }
+
+                    /* Toggle between adding and removing the "active" class,
+                    to highlight the button that controls the panel */
+                    this.classList.toggle("active");
+
+                    /* Toggle between hiding and showing the active panel */
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                    } else {
+                    panel.style.display = "block";
+                    }
+                });
+                }
+        </script>
+
+        {% block script %}
+        {% endblock %}
+    </body>
+</html>

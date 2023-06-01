@@ -1,0 +1,119 @@
+{% extends "/layout.html" %}
+
+{% block title %}
+    {{ dog.name }}
+{% endblock %}
+
+{% block body %}
+<div id="aboutPageWrapper">
+
+    <!-- Image Gallery -->
+
+    <!-- Initialize the images -->
+    {% set pic_1 = 'dog_' + dog.name|lower + '_1.jpg' %}
+    {% set pic_2 = 'dog_' + dog.name|lower + '_2.jpg' %}
+    {% set pic_3 = 'dog_' + dog.name|lower + '_3.jpg' %}
+
+    <div id="gallery">
+        
+        <!-- Standardize the height of the images -->
+        <div id="galleryFrame">
+            <!-- The big image -->
+            <div class="bigPic">
+                <!-- Expanded image; don't forget to set a default image! -->
+                <img id="expandedImg" src="{{ url_for ('static', filename=pic_1) }}">
+            
+                <!-- Image text; if you want a caption on the image -->
+                <div id="imgtext"></div>
+            </div>
+        </div>
+
+        <!-- The gallery of images -->
+        <!-- Whatever is in "alt" will be the caption when the image is clicked, leave blank for no caption -->
+        <div class="row">
+            <div class="column">
+            <img src="{{ url_for ('static', filename=pic_1) }}" alt="" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+            <img src="{{ url_for ('static', filename=pic_2) }}" alt="" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+            <img src="{{ url_for ('static', filename=pic_3) }}" alt="" onclick="myFunction(this);">
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Image Gallery -->
+
+    <!-- Information About Dog -->
+
+    <div id="info">
+
+        <div id="aboutTabs">
+            <button id="tab" onclick="openTab('interview')">Interview</button>
+            <button id="tab" onclick="openTab('stats')">Facts</button>
+            <button id="tab" onclick="openTab('data')">About</button>
+        </div>
+
+        <div class="toggleInfo" id="data" style="display:block">
+            <div class="dogTextbox">
+                <p>{{ dog.about|safe }}</p>
+            </div>
+
+            <div class="dogTextbox">
+                <p>{{ dog.story|safe }}</p>
+            </div>
+        </div>
+
+        <div class="toggleInfo" id="stats" style="display:none">
+            <div class="dogTextbox">
+                <p>{{ dog.stats|safe }}</p>
+            </div>
+
+            <div class="dogTextbox">
+                <h1>Fun Facts</h1>
+                <p>{{ dog.facts|safe }}</p>
+            </div>
+
+            <div class="dogTextbox">
+                <h1>Musher's Comment</h1>
+                <p>{{ dog.comment|safe }}</p>
+            </div>
+        </div>
+
+        <div class="toggleInfo" id="interview" style="display:none">
+            <div class="dogTextbox">
+                <h1>Interview</h1>
+                <p>{{ dog.interview|safe }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    function myFunction(imgs) {
+        // Get the expanded image
+        var expandImg = document.getElementById("expandedImg");
+        // Get the image text
+        var imgText = document.getElementById("imgtext");
+        // Use the same src in the expanded image as the image being clicked on from the grid
+        expandImg.src = imgs.src;
+        // Use the value of the alt attribute of the clickable image as text inside the expanded image
+        imgText.innerHTML = imgs.alt;
+    }
+</script>
+
+<!-- Javascript for the tabs that control the info panels, I ALSO got this from W3Schools -->
+<script>
+    function openTab(tabName) {
+            var i;
+            var x = document.getElementsByClassName("toggleInfo");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+</script>
+{% endblock %}

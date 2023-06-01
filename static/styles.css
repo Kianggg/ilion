@@ -1,0 +1,375 @@
+:root {
+    --ilion-blue: #004DFF;
+    --light-blue: #67a1ff;
+    --gridlines: #f0f0f5;
+  }
+
+body {
+    background-color: white;
+    color: var(--ilion-blue);
+    font-family: 'Squada One', sans-serif;
+    margin: 0px;
+
+    background-size: 40px 40px;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    background-image:
+      linear-gradient(to right, var(--gridlines) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--gridlines) 1px, transparent 1px);
+}
+
+#wrapper {
+    width: 100%;
+    position: absolute;
+    top: 185px;
+    display: flex;
+}
+
+.banner {
+    position: sticky;
+    top: 0;
+    /* width: 2000px; */
+    overflow: clip;
+}
+
+.logo {
+    position: absolute;
+    height: 105px;
+    width: auto;
+    top: 25px;
+    left: 15px;
+}
+
+.title {
+    position: absolute;
+    top: 100px;
+    left: 320px;
+    font-size: 52px;
+}
+
+/* The picture on the landing page */
+#splash {
+    height: 100%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    font-family: 'Droid Sans', serif; /* Different font for paragraphs */
+    font-size: 22px;
+}
+
+#fancy {
+    font-family: 'Alegreya', serif; /* Just another font style */
+}
+
+footer {
+    font-size: 10px;
+}
+
+ul {
+    display: inline;
+    padding-left: 0px
+}
+
+#main {
+    position: absolute;
+    width: 100%;
+}
+
+/* For textbox-less display of text */
+#mainFacilities {
+    display: flex;
+    color: black;
+}
+
+#mainFacilities #gallery {
+    width: auto;
+}
+
+/* Images that appear in the textboxes */
+.inline_img {
+    /* Resizing to size of browser window */
+    max-height: 100%;
+    max-width: 100%;
+
+    /* Centering */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.textbox {
+    width: 600px;
+    background-color: var(--ilion-blue);
+    color: white;
+    border-radius: 25px; /* Rounded edges */
+
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 55px;
+    padding-right: 55px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* This is the stuff for the main team page, where you can see all of the dogs */
+/* Thanks again to W3Schools for teaching me CSS */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 0.2fr;
+    gap: 0px 35px;
+
+    margin-left: 220px;
+    margin-right: 20px;
+}
+
+.grid-item {
+    font-size: 48px;
+    text-align: center;
+}
+
+#thumbnail {
+    display: grid;
+    place-items: center;
+}
+
+.grid-item img {
+    /* filter: drop-shadow(0 0 0.75rem grey) */
+    max-height: 340px;
+    transition: all .2s ease-in-out;
+}
+
+.grid-item img:hover {
+    transform: scale(1.1);
+    /* filter: drop-shadow(0 0 0.75rem var(--ilion-blue)); */
+}
+
+/* Make the sidebar move while scrolling */
+#sidebarSpacing {
+    z-index: 1;
+    position: sticky;
+    top: 200px;
+    margin-right: 137px;
+}
+
+/* Thank you W3 */
+/* Style the links inside the sidenav */
+#mainSidebar a, button {
+    position: fixed; /* Position them relative to the browser window */
+    left: -30px; /* Position them just slightly outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+    padding: 10px; /* 10px padding */
+    width: 220px; /* Set a specific width */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center the text */
+    font-size: 32px; /* Increase font size */
+    color: var(--ilion-blue); /* Text color */
+    background-image: url("sidebar_button.png"); /* Pointy-ended button */
+    background-size: 100% 100%; /* Making sure it's not enormous */
+    /* Rounded corners on the top right and bottom right side border-radius: 0 5px 5px 0; */
+}
+
+#mainSidebar li {
+    margin-bottom: 28px;
+    width: 185px;
+    height: 40px;
+}
+
+#mainSidebar a:hover {
+    left: -10px; /* On mouse-over, make them pop out a little bit */
+}
+
+/* Literally just the "TEAM" button dropdown menu */
+.accordion {
+    color: var(--ilion-blue); /* Button class overwrites font styling, so I have to re-add it here */
+    font-family: 'Squada One', sans-serif;
+    font-size: 32px;
+
+    width: 242px; /* Sizing it to look like the others */
+    height: 55px;
+    margin-bottom: -32px;
+
+    background-color: transparent; /* Overwrite CSS native button background color */
+    border: none;
+    outline: none;
+    cursor: pointer; /* I think the Javascript needs this to assign the active object properly */
+    transition: 0.3s;
+}
+
+.active, .accordion:hover {
+    left: -10px; /* On mouse-over */
+}
+
+.teamsPanel {
+    display: none;
+    overflow: hidden;
+}
+
+#teamsPopout {
+    width: 100%;
+    margin-left: 245px;
+}
+
+/* These are the buttons that are shown when you click on "TEAM" */
+#mainSidebar a.popout {
+    width: 180px;
+    background-image: url("popout_button.png"); /* Closed chevrons */
+}
+
+/* ------------------------------------------ */
+/* Stuff for each individual dog's about page */
+/* ------------------------------------------ */
+
+#aboutPageWrapper {
+    display: flex;
+}
+
+#gallery {
+    width: 50%;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 80px;
+    /* border: 7px solid red; */
+}
+
+#info {
+    width: 50%;
+    margin-right: 25px;
+    height: auto;
+    float: left;
+    /* border: 7px solid green; */
+}
+
+/* The grid: Three equal columns that float next to each other */
+.column {
+    float: left;
+    width: 30%;
+    padding: 5px;
+}
+  
+  /* Style the images inside the grid */
+.column img {
+    width: 100%;
+    opacity: 0.8;
+    cursor: pointer;
+}
+  
+.column img:hover {
+    opacity: 1;
+}
+  
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+/* Big image that shows what you have selected (or dog's deafult pic) */
+.bigPic {
+    position: relative;
+    display: block;
+    margin: auto;
+}
+
+#expandedImg {
+    width: 100%;
+    max-height: 500px;
+}
+
+#galleryFrame {
+    height: 500px;
+    display: flex;
+}
+  
+/* Optional caption for the image */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Trapezoid-shaped tabs that control the info panels */
+
+#aboutTabs {
+    position: relative;
+    height: 50px;
+    /* border: 3px solid rgb(33, 32, 139); */
+    bottom: 55px;
+}
+
+#tab {
+    float: right; /* Align them to the right edge of the container */
+    position: relative;
+    left: 0px;
+    padding: 5px;
+    width: 25%;
+    height: 92%;
+    color: #f0f0f5;
+    font-family: 'Squada One', sans-serif;
+    font-size: 24px; /* Increase font size */
+    background-image: url("info_page_tab.png"); /* Pointy-ended button */
+    background-color: rgba(0,0,0,0);
+    border: none;
+}
+
+#tab:hover {
+    background-image: url("info_page_tab_hover.png");
+    color: var(--ilion-blue);
+}
+
+/* For spacing and content reveal on the info page */
+.toggleInfo {
+    position: relative;
+    bottom: 66px;
+    transition: 0.3s;
+}
+
+/* Textbox variation that appears on a dog's info page */
+.dogTextbox {
+    background-color: var(--light-blue);
+    color: rgb(49, 49, 49);
+    border-radius: 25px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    font-size: 16px;
+}
+
+.dogTextbox p {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}

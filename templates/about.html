@@ -1,0 +1,40 @@
+{% extends "/layout.html" %}
+
+{% block title %}
+    ABOUT US
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="textbox">
+            <h1>ABOUT US</h1>
+            <p>
+                The Ilion sanctuary is located on a 70-acre property on the edge of Diogenes, Alaska. It doubles as a veterinarian clinic and is home to the Ilion sled dog team!
+            </p>
+        </div>
+
+        <div class="textbox">
+            <h1>MISSION</h1>
+            <img src="{{url_for ('static' , filename='happy_yukola.png')}}" class="inline_img" alt="Our_Mission">
+            <p>
+                The Ilion musher made it their mission to give rescued sled dogs a place to call their own. Bringing home dogs from all over the world, the sled team was started as a way to give these dogs a chance to continue their passion in pulling. But the sanctuary isn't just home to veteran sled dogs- as many of the resident dogs have never had prior experience in pulling or racing. But that never stops them from giving it a try and falling in love with the sport; feeling a sense of fulfillment in being able to participate in a team with their newfound friends. The dogs always have a choice in whether they want to participate or not, as their well-being is top priority. As the team continues to grow, so does its popularity. The two Ilion teams (long-distance and sprint/mid-distance) have attracted fans across the globe. This has allowed the team to expand on its training itinerary. But no matter how popular Ilion gets, the musher continues to ensure the comfort and safety of the dogs.
+            </p>
+        </div>
+
+        <div class="textbox">
+            <h1>HEALTH AND WELLBEING</h1>
+            <img src="{{url_for ('static' , filename='care.png')}}" class="inline_img" alt="Health_and_Wellbeing">
+            <p>
+                The health and well-being of the Ilion dogs is critical. For dogs that participate in mushing, check-ups and vaccines are given routinely. But it doesn't just stop at the basics, as the musher always makes sure that each dog is carefully cared for, as every dog is unique. If a dog is not feeling well, they won't participate in training or races until they are in full health; there are no exceptions to this rule. The sanctuary also homes dogs that are retired and currently under rehabilitation; unable to pull either due to choice or circumstance. A rehabilitation program was put in place for dogs who seek to return to racing. The Ilion vet practice has a dedicated professional staff that is trained in upkeeping the clinic and attending to its patients; responding quick and providing quality care for all dogs.
+            </p>
+        </div>
+
+        <div class="textbox">
+            <h1>SPONSORSHIP</h1>
+            <img src="{{url_for ('static' , filename='pls_support.png')}}" class="inline_img" alt="Sponsorship">
+            <p>
+                The musher once funded all operations on the sanctuary with their own money—but thanks to the growing popularity of the team, it has attracted dozens of sponsors. Now the sanctuary is completely ran off of sponsorships and generous donations from fans. If you would like to help support the sanctuary, please check out the donations page. Every cent goes back to the dogs and the patients that are cared for at the clinic.
+            </p>
+        </div>
+    </div>
+{% endblock %}

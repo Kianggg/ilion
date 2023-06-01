@@ -1,0 +1,41 @@
+{% extends "/layout.html" %}
+
+{% block title %}
+    TEAM ILION
+{% endblock %}
+
+{% block body %}
+    <div id="main">
+        <div class="grid-container">
+            {% for dog in roster %}
+                {% set dog_thumbnail = 'thumb_' + dog + '.png' %}
+                <div class="grid-item"><div id="thumbnail"><a href="/profile/{{ dog }}"><img src="{{ url_for ('static', filename=dog_thumbnail) }}"></a>{{ dog|capitalize }}</div></div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+<script>
+    function myFunction(imgs) {
+        // Get the expanded image
+        var expandImg = document.getElementById("expandedImg");
+        // Get the image text
+        var imgText = document.getElementById("imgtext");
+        // Use the same src in the expanded image as the image being clicked on from the grid
+        expandImg.src = imgs.src;
+        // Use the value of the alt attribute of the clickable image as text inside the expanded image
+        imgText.innerHTML = imgs.alt;
+    }
+</script>
+
+<!-- Javascript for the tabs that control the info panels, I ALSO got this from W3Schools -->
+<script>
+    function openTab(tabName) {
+            var i;
+            var x = document.getElementsByClassName("toggleInfo");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+</script>
