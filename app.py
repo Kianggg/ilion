@@ -3,9 +3,11 @@
 # Imports
 from flask import Flask, render_template, url_for
 import os
+from pathlib import Path
 
 # Configure application
 app = Flask(__name__)
+ILION = Path(__file__).parent.resolve()
 
 # Configure dog
 class sledDog:
@@ -19,7 +21,7 @@ class sledDog:
 
 # Get list of all active dogs
 activeDogs = []
-for filename in os.listdir('dogs'):
+for filename in os.listdir(ILION / 'dogs'):
     activeDogs.append(filename.split('.')[0])
 
 # LANDING PAGE
@@ -46,7 +48,7 @@ def profile(dogname):
     print("Dogname is: " + dogname)
 
     # Get information about dog
-    dogInfoFile = open(f"dogs/{dogname}.txt", "r")
+    dogInfoFile = open(ILION / f"dogs/{dogname}.txt", "r")
     dogInfoLines = dogInfoFile.readlines()
     dogInfoFile.close()
 
