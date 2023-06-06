@@ -1,45 +1,37 @@
-{% extends "/layout.html" %}
-
-{% block title %}
-    SUPPORT US
-{% endblock %}
-
-{% block body %}
-    <div id="main">
-        <div class="textbox">
-            <h1>SUPPORTING ILION</h1>
-            <p>
-                The Ilion sanctuary wouldn't be where it is today without the help from sponsors and donations! If you'd like to show your support for the sanctuary, then you've clicked on the right page!
-            </p>
-        </div>
-
-        <div class="textbox">
-            <h1>PHOTO CARD</h1>
-            <img src="{{url_for ('static' , filename='photo_cards.png')}}" class="inline_img" alt="Photo_Card">
-            <p>
-                Photocards are one of the many fun ways to show your support for your favorite dog! Receive a signed copy in the mail if you choose to donate! You have the option to select one dog, as many dogs as you'd like, or all of the dogs. The photocard(s) are mailed diligently with lots of love!
-            </p>
-            <p style="font-size: 12px;">
-                *Halibut is currently unavailable.
-            </p>
-        </div>
-
-        <div class="textbox">
-            <h1>MERCHANDISE</h1>
-            <img src="{{url_for ('static' , filename='merchandise.png')}}" class="inline_img" alt="Merchandise">
-            <p>
-                Ilion also offers homemade merchandise that's available to purchase. From stickers, keychains to plush toys, and much more, feel free to look at what's available! Any purchase over $40 will come with a photo card of your choice and free shipping. Thank you for your continuous support!
-            </p>
-        </div>
-
-        <div class="textbox">
-            <h1>PARTNERSHIP</h1>
-            <p>
-                The Ilion Sanctuary is always willing to start new partnerships<br>
-                that are interested in supporting our dogs.<br>
-                For further inquiry, please contact the musher.<br>
-                Thank you.<br>
-            </p>
-        </div>
+<div id="main">
+    <div class="textbox">
+        <h1>SUPPORTING ILION</h1>
+        <p>
+            The Ilion sanctuary wouldn't be where it is today without the help from sponsors and donations! If you'd like to show your support for the sanctuary, then you've clicked on the right page!
+        </p>
     </div>
-{% endblock %}
+
+    <div class="textbox">
+        <h1>PHOTO CARD</h1>
+        <img src="{{url_for ('static' , filename='photo_cards.png')}}" class="inline_img" alt="Photo_Card">
+        <p>
+            Photocards are one of the many fun ways to show your support for your favorite dog! Receive a signed copy in the mail if you choose to donate! You have the option to select one dog, as many dogs as you'd like, or all of the dogs. The photocard(s) are mailed diligently with lots of love!
+        </p>
+        <p style="font-size: 12px;">
+            *Halibut is currently unavailable!
+        </p>
+    </div>
+
+    <div class="textbox">
+        <h1>MERCHANDISE</h1>
+        <img src="{{url_for ('static' , filename='merchandise.png')}}" class="inline_img" alt="Merchandise">
+        <p>
+            Ilion also offers homemade merchandise that's available to purchase. From stickers, keychains to plush toys, and much more, feel free to look at what's available! Any purchase over $40 will come with a photo card of your choice and free shipping. Thank you for your continuous support!
+        </p>
+    </div>
+
+    <div class="textbox">
+        <h1>PARTNERSHIP</h1>
+        <p>
+            The Ilion Sanctuary is always willing to start new partnerships<br>
+            that are interested in supporting our dogs.<br>
+            For further inquiry, please contact the musher.<br>
+            Thank you.<br>
+        </p>
+    </div>
+</div>

@@ -27,7 +27,7 @@ for filename in os.listdir(ILION / 'dogs'):
 # LANDING PAGE
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("layout.html")
 
 # ABOUT
 @app.route("/about")
@@ -37,11 +37,11 @@ def about():
 # TEAM ILION
 @app.route("/team")
 def team():
-    return render_template("team.html", roster = activeDogs)
+    return render_template("team.html", roster = activeDogs, isTeam = True)
 
 @app.route("/retired")
 def retired():
-    return render_template("retired.html")
+    return render_template("retired.html",  isTeam = True)
 
 @app.route("/profile/<dogname>")
 def profile(dogname):
@@ -62,7 +62,7 @@ def profile(dogname):
     myDog.comment = dogInfoLines[5]
     myDog.interview = dogInfoLines[6]
 
-    return render_template("profile.html", dog=myDog)
+    return render_template("profile.html", dog=myDog, isTeam = True)
 
 # FACILITIES
 @app.route("/clinic")

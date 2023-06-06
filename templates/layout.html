@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 
 <html lang="en">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+
     <head>
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="/images/favicon.png">
@@ -27,7 +30,7 @@
           <div id="sidebarSpacing">
             <div id="mainSidebar" class="sidebar">
               <ul>
-                <li><a href="/about" id="about"><em>ABOUT</em></a></li>
+                <li><a id="aboutTab"><em>ABOUT</em></a></li>
 
                 <!-- Very jank offset so that it matches the other buttons -->
                 <li>
@@ -35,8 +38,8 @@
                 <div class="teamsPanel">
                   <p>
                     <ul>
-                      <li><a id="teamsPopout" class="popout" href="/team" id="staff"><em>TEAM ILION</em></a></li>
-                      <li><a id="teamsPopout" class="popout" href="/retired" id="retired"><em>KENNEL</em></a></li>
+                      <li><a class="popout" href="/team" id="staffTab"><em>TEAM ILION</em></a></li>
+                      <li><a class="popout" href="/retired" id="retiredTab"><em>KENNEL</em></a></li>
                     </ul>
                   </p>
                 </div>
@@ -47,56 +50,153 @@
                   <div class="teamsPanel">
                       <p>
                           <ul>
-                          <li><a id="teamsPopout" class="popout" href="/clinic" id="clinic"><em>CLINIC</em></a></li>
-                          <li><a id="teamsPopout" class="popout" href="/cafe" id="cafe"><em>CAFE</em></a></li>
-                          <li><a id="teamsPopout" class="popout" href="/salon" id="salon"><em>DOG SALON</em></a></li>
-                          <li><a id="teamsPopout" class="popout" href="/daycare" id="daycare"><em>DAY CARE</em></a></li>
+                          <li><a class="popout" id="clinicTab"><em>CLINIC</em></a></li>
+                          <li><a class="popout" id="cafeTab"><em>CAFE</em></a></li>
+                          <li><a class="popout" id="salonTab"><em>DOG SALON</em></a></li>
+                          <li><a class="popout" id="daycareTab"><em>DAY CARE</em></a></li>
                           </ul>
                       </p>
                   </div>
               </li>
 
-                <li><a href="/sponsors" id="sponsors"><em>SPONSORS</em></a></li>
-                <li><a href="/blog" id="blog"><em>BLOG</em></a></li>
-                <li><a href="/support" id="support"><em>SUPPORT US</em></a></li>
+                <li><a id="sponsorsTab"><em>SPONSORS</em></a></li>
+                <li><a id="blogTab"><em>BLOG</em></a></li>
+                <li><a id="supportTab"><em>SUPPORT US</em></a></li>
               </ul>
             </div>
           </div>
 
+          <!-- ------------------ -->
           <!-- Main Site Contents -->
-          {% block body %}
-          {% endblock %}
+          <!-- ------------------ -->
+
+          <!-- ABOUT -->
+          <div class="view" id="aboutView" style="display: none;">
+            {% include "about.html" %}
+          </div>
+
+          <!-- BLOG -->
+          <div class="view" id="blogView" style="display: none;">
+            {% include "blog.html" %}
+          </div>
+
+          <!-- CAFE -->
+          <div class="view" id="cafeView" style="display: none;">
+            {% include "cafe.html" %}
+          </div>
+
+          <!-- CLINIC -->
+          <div class="view" id="clinicView" style="display: none;">
+            {% include "clinic.html" %}
+          </div>
+
+          <!-- DAYCARE -->
+          <div class="view" id="daycareView" style="display: none;">
+            {% include "daycare.html" %}
+          </div>
+
+          <!-- INDEX -->
+          {% if (isTeam == True) %}
+            <div class="view" id="indexView" style="display: none;">
+              {% include "index.html" %}
+            </div>
+          {% else %}
+            <div class="view" id="indexView">
+              {% include "index.html" %}
+            </div>
+          {% endif %}
+
+
+          <!-- SALON -->
+          <div class="view" id="salonView" style="display: none;">
+            {% include "salon.html" %}
+          </div>
+
+          <!-- SPONSORS -->
+          <div class="view" id="sponsorsView" style="display: none;">
+            {% include "sponsors.html" %}
+          </div>
+
+          <!-- SUPPORT -->
+          <div class="view" id="supportView" style="display: none;">
+            {% include "support.html" %}
+          </div>
+
+          <!-- DOGS PAGES: TEAM, RETIRED/KENNEL, AND PROFILE -->
+          {% if (isTeam == True) %}
+            <div class="view" id="dogsView">
+              {% block body %}
+              {% endblock %}
+            </div>
+          {% endif %}
 
         </div>
 
-        <!-- Javascript for Accordion sidebar, I got this from W3Schools -->
         <script>
+          /* Javascript for Accordion sidebar, I got this from W3Schools */
           var acc = document.getElementsByClassName("accordion");
-                var i;
+          var i;
 
-                for (i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function() {
-                    /* Deselect any other accordions and hide their contents */
-                    for (n = 0; n < acc.length; n++) {
-                        if (this != acc[n]) {
-                            acc[n].classList.remove("active");
-                            acc[n].nextElementSibling.style.display = "none";
-                        }
+          for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                /* Deselect any other accordions and hide their contents */
+                for (n = 0; n < acc.length; n++) {
+                    if (this != acc[n]) {
+                        acc[n].classList.remove("active");
+                        acc[n].nextElementSibling.style.display = "none";
                     }
-
-                    /* Toggle between adding and removing the "active" class,
-                    to highlight the button that controls the panel */
-                    this.classList.toggle("active");
-
-                    /* Toggle between hiding and showing the active panel */
-                    var panel = this.nextElementSibling;
-                    if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                    } else {
-                    panel.style.display = "block";
-                    }
-                });
                 }
+
+                /* Toggle between adding and removing the "active" class,
+                to highlight the button that controls the panel */
+                this.classList.toggle("active");
+
+                /* Toggle between hiding and showing the active panel */
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                panel.style.display = "none";
+                } else {
+                panel.style.display = "block";
+                }
+            });
+          }
+
+          // This is the Javascript that makes the tabs actually load the correct views
+          $(document).ready(function() {
+
+            // Set up the tabs to load the correct views
+            $("#aboutTab").click(function() { load_view('about') } );
+            $("#blogTab").click(function() { load_view('blog') } );
+            $("#cafeTab").click(function() { load_view('cafe') } );
+            $("#clinicTab").click(function() { load_view('clinic') } );
+            $("#daycareTab").click(function() { load_view('daycare') } );
+            $("#indexTab").click(function() { load_view('index') } );
+            $("#salonTab").click(function() { load_view('salon') } );
+            $("#sponsorsTab").click(function() { load_view('sponsors') } );
+            $("#supportTab").click(function() { load_view('support') } );
+
+            // By default, load the landing page
+            // Unless we are on the TEAMS or RETIRED or PROFILE pages
+            // load_view('index');
+          });
+
+          function load_view(viewName) {
+              $(".view").each(function(index) {
+                if ($(this).attr("id") == (viewName + 'View')) {
+                  $(this).show();
+                }
+                else { $(this).hide(); }
+              });
+
+              $(".title").text = viewName;
+
+              // Clear open accordion menus
+              $(".accordion").each(function(index) {
+                this.classList.remove("active");
+                var panel = this.nextElementSibling;
+                panel.style.display = "none";
+              });
+          }
         </script>
 
         {% block script %}

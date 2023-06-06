@@ -20,6 +20,10 @@ body {
       linear-gradient(to bottom, var(--gridlines) 1px, transparent 1px);
 }
 
+.title {
+    text-transform:capitalize;
+}
+
 #wrapper {
     width: 100%;
     position: absolute;
@@ -93,7 +97,7 @@ ul {
 
 #main {
     position: absolute;
-    width: 100%;
+    width: 75%;
 }
 
 /* For textbox-less display of text */
@@ -229,7 +233,7 @@ ul {
     overflow: hidden;
 }
 
-#teamsPopout {
+.popout {
     width: 100%;
     margin-left: 245px;
 }
