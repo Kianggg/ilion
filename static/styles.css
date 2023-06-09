@@ -2,6 +2,10 @@
     --ilion-blue: #004DFF;
     --light-blue: #67a1ff;
     --gridlines: #f0f0f5;
+
+    --gallery-height: 700px;
+    --profile-font-size: 24px;
+    --scrolling-box-height: 400px;
   }
 
 body {
@@ -18,6 +22,7 @@ body {
     background-image:
       linear-gradient(to right, var(--gridlines) 1px, transparent 1px),
       linear-gradient(to bottom, var(--gridlines) 1px, transparent 1px);
+    background-attachment: fixed;
 }
 
 .title {
@@ -51,6 +56,11 @@ body {
     top: 100px;
     left: 320px;
     font-size: 52px;
+}
+
+.backButton {
+    height: 36px;
+    width: 36px;
 }
 
 /* The picture on the landing page */
@@ -302,11 +312,11 @@ ul {
 
 #expandedImg {
     width: 100%;
-    max-height: 500px;
+    max-height: var(--gallery-height);
 }
 
 #galleryFrame {
-    height: 500px;
+    height: var(--gallery-height);
     display: flex;
 }
   
@@ -369,11 +379,21 @@ ul {
     margin-top: 15px;
     margin-bottom: 15px;
 
-    font-size: 16px;
+    font-size: var(--profile-font-size);
 }
 
 .dogTextbox p {
     text-align: left;
-    font-size: 16px;
+    font-size: var(--profile-font-size);
     font-weight: bold;
+}
+
+#data .dogTextbox {
+    max-height: var(--scrolling-box-height);
+    overflow: auto;
+}
+
+#interview .dogTextbox {
+    max-height: var(--scrolling-box-height);
+    overflow: auto;
 }

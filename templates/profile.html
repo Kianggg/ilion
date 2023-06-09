@@ -1,7 +1,7 @@
 {% extends "/layout.html" %}
 
 {% block title %}
-    {{ dog.name }}
+    <a href="/team"><img src="{{ url_for ('static' , filename='back_button.png') }}" class="backButton" alt="Back to Team Page"></a>  {{ dog.name }}
 {% endblock %}
 
 {% block body %}
