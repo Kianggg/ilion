@@ -3,9 +3,14 @@
     --light-blue: #67a1ff;
     --gridlines: #f0f0f5;
 
+    --warm-grey: #383230;
+    --offwhite: #e6e0d4;
+
     --gallery-height: 700px;
     --profile-font-size: 24px;
     --scrolling-box-height: 400px;
+    --facilities-logo-size: 256px;
+    --staff-profile-pic-size: 256px;
   }
 
 body {
@@ -108,16 +113,6 @@ ul {
 #main {
     position: absolute;
     width: 75%;
-}
-
-/* For textbox-less display of text */
-#mainFacilities {
-    display: flex;
-    color: black;
-}
-
-#mainFacilities #gallery {
-    width: auto;
 }
 
 /* Images that appear in the textboxes */
@@ -396,4 +391,181 @@ ul {
 #interview .dogTextbox {
     max-height: var(--scrolling-box-height);
     overflow: auto;
+}
+
+/* ----------------------------- */
+/* Elements for Facilities Pages */
+/* ----------------------------- */
+
+#eyecatch {
+    height: 100%;
+    width: 100%;
+}
+
+/* This is jank as hell, but it works */
+.facilitiesLogo {
+    display: block;
+    position: relative;
+
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 115px;
+    margin-bottom: -140px;
+
+    max-height: var(--facilities-logo-size);
+    max-width: var(--facilities-logo-size);
+}
+
+.schedule {
+    background-color: var(--warm-grey);
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 5px;
+}
+
+/* For textbox-less display of text */
+#mainFacilities {
+    color: black;
+}
+
+/* Three-Column Layout */
+.unequalColumn {
+    float: left;
+    padding: 20px;
+}
+  
+.eyecatch {
+    width: 25%;
+}
+
+.middle {
+    width: 40%;
+}
+
+.extra {
+    width: 15%;
+}
+
+.unequalColumns:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Styling for the staff sections */
+.facilitiesPersonnel {
+    display: flex;
+}
+
+.staffAbout {
+    float: left;
+    padding: 10px;
+    margin-left: 20px;
+
+    width: 70%;
+}
+
+.staffPic {
+    float: left;
+    padding: 10px;
+    margin-right: 20px;
+    width: 20%;
+
+    display: flex;
+    align-items: center;
+}
+
+.staffAbout p {
+    text-align: left;
+}
+
+/* ----------------------------------------------- */
+/* CSS for Modal Images that I got from W3 Schools */
+/* ----------------------------------------------- */
+
+/* Style the Image Used to Trigger the Modal */
+.staffThumb {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    margin: auto;
+
+    height: var(--staff-profile-pic-size);
+    width: var(--staff-profile-pic-size);
+}
+  
+.staffThumb:hover {opacity: 0.7;}
+  
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: var(--offwhite);
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+color: #bbb;
+text-decoration: none;
+cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+            width: 100%;
+    }
 }

@@ -2,7 +2,7 @@
 
 <html lang="en">
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <head>
         <!-- Favicon -->
@@ -130,6 +130,16 @@
             </div>
           {% endif %}
 
+          <!-- Modal that I got from W3 Schools -->
+          <div id="myModal" class="modal">
+              <!-- The Close Button -->
+              <span class="close">&times;</span>
+              <!-- Modal Content (The Image) -->
+              <img class="modal-content" id="img01">
+              <!-- Modal Caption (Image Text) -->
+              <div id="caption"></div>
+          </div>
+
         </div>
 
         <script>
@@ -197,6 +207,38 @@
                 panel.style.display = "none";
               });
           }
+
+          // Javascript for profile picture that expands into the larger version
+          // This website proudly brought to you by W3 Schools, lmao
+          // I did have to JQuery-ify it though, and set it up to work for multiple images
+          // And also to make it display a different, fuller version of the thumbnail
+
+            // Get the modal
+            var modal = $("#myModal");
+
+            // Hide by default
+            modal.hide();
+
+            // Getreference to modal img caption
+            var modalImg = $("#img01");
+            var captionText = $("#caption");
+
+            $(".staffThumb").click(function() {
+              modal.show();
+              modalImg.attr("src", $(this).next().attr("src"));
+              captionText.text($(this).attr("alt"));
+            });
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+              modal.hide()
+            }
+
+          // End of modal stuff
+
         </script>
 
         {% block script %}
