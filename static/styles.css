@@ -442,6 +442,11 @@ ul {
     margin-right: auto;
 }
 
+.facilityImg {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 /* For textbox-less display of text */
 #mainFacilities {
     color: black;
@@ -464,7 +469,7 @@ the column shouldn't take up that extra space */
 }
 
 .extra {
-    width: 15%;
+    width: 20%;
 }
 
 .unequalColumns:after {
