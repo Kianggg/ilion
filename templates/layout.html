@@ -198,7 +198,7 @@
                 else { $(this).hide(); }
               });
 
-              $(".title").text = viewName;
+              $(".title").html(viewName);
 
               // Clear open accordion menus
               $(".accordion").each(function(index) {
@@ -219,7 +219,7 @@
             // Hide by default
             modal.hide();
 
-            // Getreference to modal img caption
+            // Get reference to modal img caption
             var modalImg = $("#img01");
             var captionText = $("#caption");
 

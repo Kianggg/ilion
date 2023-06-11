@@ -398,8 +398,7 @@ ul {
 /* ----------------------------- */
 
 #eyecatch {
-    height: 100%;
-    width: 100%;
+    max-height: 500px;
 }
 
 /* This is jank as hell, but it works */
@@ -416,13 +415,31 @@ ul {
     max-width: var(--facilities-logo-size);
 }
 
+/* The logos are ***slightly*** different dimensions, so this helps to center and spce them appropriately */
+#salonView .facilitiesLogo {
+    left: 49%;
+    transform: translateX(-50%);
+    bottom: 100px;
+    margin-bottom: -135px;
+}
+
+#cafeView .facilitiesLogo {
+    left: 52.5%;
+    transform: translateX(-50%);
+    bottom: 45px;
+    margin-bottom: -45px;
+}
+
 .schedule {
+    width: 366px;
     background-color: var(--warm-grey);
     color: white;
 
     padding: 15px;
-
     border-radius: 5px;
+
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* For textbox-less display of text */
@@ -435,9 +452,11 @@ ul {
     float: left;
     padding: 20px;
 }
-  
+
+/* If graphics is thinner than 25% width on the column would allow, then
+the column shouldn't take up that extra space */
 .eyecatch {
-    width: 25%;
+    max-width: 25%;
 }
 
 .middle {
