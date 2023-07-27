@@ -17,14 +17,12 @@
     </head>
 
     <body>
-        <!-- Banner Image -->
-        <img src="{{ url_for ('static' , filename='banner.png') }}" class="banner" alt="Team Ilion"></img>
-        <a href="/"><img src="{{ url_for ('static' , filename='ilion_logo.png') }}" class="logo" alt="Sled Dog Sanctuary"></a>
-
         <!-- Page Title-->
-        <div class="title">{{ self.title() }}</div>
+        <!-- <div class="title">{{ self.title() }}</div> -->
 
         <div id="wrapper">
+
+          <a href="/"><img src="{{url_for ('static' , filename='ilion_logo.png')}}" id="logo" alt="Welcome to Ilion!"/></a>
 
           <!-- Sidebar -->
           <div id="sidebarSpacing">

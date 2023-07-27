@@ -11,23 +11,32 @@
     --scrolling-box-height: 400px;
     --facilities-logo-size: 256px;
     --staff-profile-pic-size: 256px;
-  }
+}
+
+html {
+    height: 100%;
+}
 
 body {
-    background-color: white;
+    background-color: var(--ilion-blue);
     color: var(--ilion-blue);
     font-family: 'Squada One', sans-serif;
     margin: 0px;
 
-    background-size: 40px 40px;
-
     overflow-y: scroll;
     overflow-x: hidden;
 
-    background-image:
-      linear-gradient(to right, var(--gridlines) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--gridlines) 1px, transparent 1px);
-    background-attachment: fixed;
+    background-image: url("background.png");
+    background-size: auto 100%;
+    background-position: left top;
+    background-repeat: repeat-x;
+}
+
+#main {
+    position: absolute;
+    width: 75%;
+
+    background-image: url("background_white.png");
 }
 
 .title {
@@ -37,7 +46,6 @@ body {
 #wrapper {
     width: 100%;
     position: absolute;
-    top: 185px;
     display: flex;
 }
 
@@ -48,12 +56,12 @@ body {
     overflow: clip;
 }
 
-.logo {
+#logo {
     position: absolute;
-    height: 105px;
+    height: 75px;
     width: auto;
-    top: 25px;
-    left: 15px;
+    top: 22px;
+    left: 22px;
 }
 
 .title {
@@ -68,14 +76,153 @@ body {
     width: 36px;
 }
 
-/* The picture on the landing page */
-#splash {
-    height: 100%;
 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+/************
+*** FONTS ***
+*************/
+
+@font-face {
+    font-family: "Nasalization";
+    src: url(nasalization-rg.otf);
 }
+
+/******************
+LANDING PAGE STUFF
+*******************/
+#main.index_main {
+    background-image: none;
+}
+
+#landing_page {
+    height: 94vh;
+    width: 100vw;
+    display: flex;
+}
+
+#splash {
+    display: flex;
+
+    width: auto;
+    height: 90vh;
+
+    border-radius: 10px;
+}
+
+#splash_container {
+    display: block;
+    transform: translate(60%, 5%);
+}
+
+#credit {
+    color: white;
+}
+
+#paw_prints {
+    position: absolute;
+    height: 415px;
+    right: -150px;
+    opacity: 0.9;
+}
+
+#ticker {
+    position: absolute;
+    top: 55%;
+    right: -155px;
+}
+
+.ticker_text {
+    font-family: "Nasalization";
+    color: white;
+}
+
+#ticker_line {
+    height: 32px;
+}
+
+#team_ilion {
+    position: absolute;
+    height: 300px;
+    right: -100px;
+    bottom: 27px;
+}
+
+#join_us {
+    position: absolute;
+    height: 107px;
+    right: -123px;
+    bottom: 0px;
+}
+
+/**************************
+CSS Ticker that I got from Lewis Carey: https://codepen.io/lewismcarey/pen/GJZVoG
+***************************/
+
+@-webkit-keyframes ticker {
+    0% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+    }
+  
+    100% {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+}
+  
+@keyframes ticker {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+  
+.ticker_wrap {
+    position: absolute;
+    bottom: 32px;
+    width: 100%;
+    overflow: hidden;
+    height: 4rem;
+    padding-left: 100%;
+    box-sizing: content-box;
+}
+
+.ticker_text {
+    display: inline-block;
+    height: 4rem;
+    line-height: 4rem;  
+    white-space: nowrap;
+    padding-right: 100%;
+    box-sizing: content-box;
+
+    -webkit-animation-iteration-count: infinite; 
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-name: ticker;
+            animation-name: ticker;
+    -webkit-animation-duration: 30s;
+            animation-duration: 30s;
+}
+
+.ticker_item {
+    display: inline-block;
+
+    padding: 0 2rem;
+    font-size: 2rem;
+    color: white;   
+}
+
+
+/**************************
+End of ticker
+***************************/
 
 h1 {
     text-align: center;
@@ -97,6 +244,11 @@ p {
     font-size: 22px;
 }
 
+a {
+    text-decoration: none;
+    color: var(--offwhite);
+}
+
 #fancy {
     font-family: 'Alegreya', serif; /* Just another font style */
 }
@@ -108,11 +260,6 @@ footer {
 ul {
     display: inline;
     padding-left: 0px
-}
-
-#main {
-    position: absolute;
-    width: 75%;
 }
 
 /* Images that appear in the textboxes */
@@ -181,7 +328,8 @@ ul {
 #sidebarSpacing {
     z-index: 1;
     position: sticky;
-    top: 200px;
+
+    margin-top: 195px;
     margin-right: 137px;
 }
 
@@ -189,17 +337,18 @@ ul {
 /* Style the links inside the sidenav */
 #mainSidebar a, button {
     position: fixed; /* Position them relative to the browser window */
-    left: -30px; /* Position them just slightly outside of the screen */
-    transition: 0.3s; /* Add transition on hover */
+    left: 30px; /* Position them just slightly outside of the screen */
     padding: 10px; /* 10px padding */
     width: 220px; /* Set a specific width */
     text-decoration: none; /* Remove underline */
     text-align: center; /* Center the text */
+    font-family: "Nasalization";
     font-size: 32px; /* Increase font size */
-    color: var(--ilion-blue); /* Text color */
-    background-image: url("sidebar_button.png"); /* Pointy-ended button */
+    color: white; /* Text color */
+    background-image: url("menu_button.png"); /* Pointy-ended button */
     background-size: 100% 100%; /* Making sure it's not enormous */
     /* Rounded corners on the top right and bottom right side border-radius: 0 5px 5px 0; */
+    transition: 0.15s; /* Add transition on hover */
 }
 
 #mainSidebar li {
@@ -209,13 +358,14 @@ ul {
 }
 
 #mainSidebar a:hover {
-    left: -10px; /* On mouse-over, make them pop out a little bit */
+    left: 35px; /* On mouse-over, make them pop out a little bit */
+    background-image: url("menu_button_hover.png"); /* Pointy-ended button */
 }
 
 /* Literally just the "TEAM" button dropdown menu */
 .accordion {
-    color: var(--ilion-blue); /* Button class overwrites font styling, so I have to re-add it here */
-    font-family: 'Squada One', sans-serif;
+    color:  white; /* Button class overwrites font styling, so I have to re-add it here */
+    font-family: "Nasalization";
     font-size: 32px;
 
     width: 242px; /* Sizing it to look like the others */
@@ -226,11 +376,13 @@ ul {
     border: none;
     outline: none;
     cursor: pointer; /* I think the Javascript needs this to assign the active object properly */
-    transition: 0.3s;
+
+    transition: 0.15s; /* Add transition on hover */
 }
 
 .active, .accordion:hover {
-    left: -10px; /* On mouse-over */
+    left: 35px; /* On mouse-over */
+    background-image: url("menu_button_hover.png"); /* Pointy-ended button */
 }
 
 .teamsPanel {
@@ -245,8 +397,8 @@ ul {
 
 /* These are the buttons that are shown when you click on "TEAM" */
 #mainSidebar a.popout {
-    width: 180px;
-    background-image: url("popout_button.png"); /* Closed chevrons */
+    width: 210px;
+    background-image: url("menu_button.png"); /* Closed chevrons */
 }
 
 /* ------------------------------------------ */
