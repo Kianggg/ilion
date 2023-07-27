@@ -1,11 +1,25 @@
 :root {
     --ilion-blue: #004DFF;
     --light-blue: #67a1ff;
+    --dark-blue: #1105b4;
+    --darkest-blue: #080442;;
     --gridlines: #f0f0f5;
+
+    --transparent-ilion-blue: rgba(0, 77, 255, 0.8);
+    --transparent-light-blue: rgba(103, 161, 255, 0.8);
+    --transparent-dark-blue: rgba(17, 5, 180, 0.8);
 
     --warm-grey: #383230;
     --offwhite: #e6e0d4;
 
+    /* "--content-offset" is how far over to the right things need to be in order to NOT collide with the dithered white border */
+    --content-offset: 285px;
+    /* "--content-width" is how wide stuff has to be in order to fill up all the avilable space without overflowing the edge of the screen */
+    /* --sidebar-size is a manually-calculated constant */
+    --sidebar-size: 408px;
+    --content-width: calc(100vw - var(--content-offset) - var(--sidebar-size));
+
+    --team-grid-cell-size: 350px;
     --gallery-height: 700px;
     --profile-font-size: 24px;
     --scrolling-box-height: 400px;
@@ -18,8 +32,8 @@ html {
 }
 
 body {
-    background-color: var(--ilion-blue);
-    color: var(--ilion-blue);
+    background-color: #81b7ff;
+    color: var(--darkest-blue);
     font-family: 'Squada One', sans-serif;
     margin: 0px;
 
@@ -27,20 +41,30 @@ body {
     overflow-x: hidden;
 
     background-image: url("background.png");
-    background-size: auto 100%;
-    background-position: left top;
+    background-size: 100% auto;
+    background-position: left bottom;
     background-repeat: repeat-x;
 }
 
 #main {
-    position: absolute;
-    width: 75%;
-
+    position: fixed;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    overflow-y: scroll;
+    overflow-x: hidden;
     background-image: url("background_white.png");
 }
 
 .title {
-    text-transform:capitalize;
+    font-family: "Rexlia";
+    color: #080442;
+    text-decoration-line: underline;
+    text-transform: capitalize;
+
+    position: absolute;
+    top: 72px;
+    left: 320px;
+    font-size: 34px;
 }
 
 #wrapper {
@@ -64,13 +88,6 @@ body {
     left: 22px;
 }
 
-.title {
-    position: absolute;
-    top: 100px;
-    left: 320px;
-    font-size: 52px;
-}
-
 .backButton {
     height: 36px;
     width: 36px;
@@ -86,10 +103,19 @@ body {
     src: url(nasalization-rg.otf);
 }
 
+@font-face {
+    font-family: "Rexlia";
+    src: url(rexlia-rg.otf);
+}
+
 /******************
 LANDING PAGE STUFF
 *******************/
 #main.index_main {
+    position: absolute;
+    width: 75%;
+
+    overflow: visible;
     background-image: none;
 }
 
@@ -102,6 +128,9 @@ LANDING PAGE STUFF
 #splash {
     display: flex;
 
+    margin-left: auto;
+    margin-right: 0;
+
     width: auto;
     height: 90vh;
 
@@ -110,24 +139,36 @@ LANDING PAGE STUFF
 
 #splash_container {
     display: block;
-    transform: translate(60%, 5%);
+    width: 40%;
+    transform: translate(0%, 5%);
 }
 
 #credit {
+    margin-left: auto;
+    margin-right: 0;
     color: white;
 }
 
+#splash_decorations {
+    width: 60%;
+}
+
 #paw_prints {
-    position: absolute;
-    height: 415px;
-    right: -150px;
+    display: flex;
+    position: fixed;
+    width: auto;
+    height: 45vh;
+    right: 0;
     opacity: 0.9;
 }
 
 #ticker {
-    position: absolute;
-    top: 55%;
-    right: -155px;
+    position: fixed;
+    display: block;
+
+    max-width: 100%;
+
+    top: 45%;
 }
 
 .ticker_text {
@@ -136,21 +177,32 @@ LANDING PAGE STUFF
 }
 
 #ticker_line {
-    height: 32px;
+    max-width: 100%;
+    position: fixed;
+    right: 0;
+    height: 4vh;
 }
 
 #team_ilion {
-    position: absolute;
-    height: 300px;
-    right: -100px;
-    bottom: 27px;
+    position: fixed;
+    display: flex;
+
+    bottom: 10%;
+    right: 5%;
+
+    width: auto;
+    height: 30vh;
 }
 
 #join_us {
-    position: absolute;
-    height: 107px;
-    right: -123px;
-    bottom: 0px;
+    position: fixed;
+    display: flex;
+
+    bottom: 7%;
+    right: 3%;
+
+    width: auto;
+    height: 12vh;
 }
 
 /**************************
@@ -166,7 +218,7 @@ CSS Ticker that I got from Lewis Carey: https://codepen.io/lewismcarey/pen/GJZVo
   
     100% {
       -webkit-transform: translate3d(-100%, 0, 0);
-      transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-150%, 0, 0);
     }
 }
   
@@ -179,16 +231,14 @@ CSS Ticker that I got from Lewis Carey: https://codepen.io/lewismcarey/pen/GJZVo
 
     100% {
         -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-150%, 0, 0);
     }
 }
   
 .ticker_wrap {
-    position: absolute;
-    bottom: 32px;
-    width: 100%;
+    max-width: 100%;
     overflow: hidden;
-    height: 4rem;
+
     padding-left: 100%;
     box-sizing: content-box;
 }
@@ -207,8 +257,8 @@ CSS Ticker that I got from Lewis Carey: https://codepen.io/lewismcarey/pen/GJZVo
             animation-timing-function: linear;
     -webkit-animation-name: ticker;
             animation-name: ticker;
-    -webkit-animation-duration: 30s;
-            animation-duration: 30s;
+    -webkit-animation-duration: 20s;
+            animation-duration: 20s;
 }
 
 .ticker_item {
@@ -295,33 +345,56 @@ ul {
 /* Thanks again to W3Schools for teaching me CSS */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     grid-auto-rows: 0.2fr;
-    gap: 0px 35px;
+    gap: 20px 35px;
 
-    margin-left: 220px;
-    margin-right: 20px;
+    margin-top: 125px;
+    margin-left: 368px;
+    margin-right: 5%;
 }
 
 .grid-item {
-    font-size: 48px;
+    height: var(--team-grid-cell-size);
+    width: var(--team-grid-cell-size);
     text-align: center;
 }
 
 #thumbnail {
     display: grid;
     place-items: center;
+    background-image: url(text_box_wide.png);
+    background-size: 100% 100%;
+}
+
+.profile_button {
+    text-decoration: none; 
+    text-align: center; 
+    font-family: "Rexlia";
+    font-size: xx-large;
+    color: white;
+
+    margin-top: -25%;
+    width: 80%;
+
+    background-color: var(--transparent-dark-blue);
+    border: 2px solid var(--transparent-ilion-blue);
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.profile_button:hover {
+    color: var(--dark-blue);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background-color: var(--transparent-light-blue);
+    box-shadow: inset 0px 0px 4px 4px rgba(255, 255, 255, 0.8);
+    /* filter: drop-shadow(0 0 0.75rem white); */
+    transform: scale(1.1);
 }
 
 .grid-item img {
-    /* filter: drop-shadow(0 0 0.75rem grey) */
-    max-height: 340px;
-    transition: all .2s ease-in-out;
-}
-
-.grid-item img:hover {
-    transform: scale(1.1);
-    /* filter: drop-shadow(0 0 0.75rem var(--ilion-blue)); */
+    margin-top: -40px;
+    max-height: calc(var(--team-grid-cell-size) + 30px);
 }
 
 /* Make the sidebar move while scrolling */
@@ -359,6 +432,7 @@ ul {
 
 #mainSidebar a:hover {
     left: 35px; /* On mouse-over, make them pop out a little bit */
+    color: var(--dark-blue);
     background-image: url("menu_button_hover.png"); /* Pointy-ended button */
 }
 
@@ -382,6 +456,7 @@ ul {
 
 .active, .accordion:hover {
     left: 35px; /* On mouse-over */
+    color: var(--dark-blue);
     background-image: url("menu_button_hover.png"); /* Pointy-ended button */
 }
 
@@ -399,6 +474,10 @@ ul {
 #mainSidebar a.popout {
     width: 210px;
     background-image: url("menu_button.png"); /* Closed chevrons */
+}
+
+#mainSidebar a.popout:hover {
+    background-image: url("menu_button_hover.png");
 }
 
 /* ------------------------------------------ */
@@ -549,89 +628,15 @@ ul {
 /* Elements for Facilities Pages */
 /* ----------------------------- */
 
-#eyecatch {
-    max-height: 500px;
-}
-
-/* This is jank as hell, but it works */
-.facilitiesLogo {
-    display: block;
-    position: relative;
-
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 115px;
-    margin-bottom: -140px;
-
-    max-height: var(--facilities-logo-size);
-    max-width: var(--facilities-logo-size);
-}
-
-/* The logos are ***slightly*** different dimensions, so this helps to center and spce them appropriately */
-#salonView .facilitiesLogo {
-    left: 49%;
-    transform: translateX(-50%);
-    bottom: 100px;
-    margin-bottom: -135px;
-}
-
-#cafeView .facilitiesLogo {
-    left: 52.5%;
-    transform: translateX(-50%);
-    bottom: 45px;
-    margin-bottom: -45px;
-}
-
-.schedule {
-    width: 366px;
-    background-color: var(--warm-grey);
-    color: white;
-
-    padding: 15px;
-    border-radius: 5px;
-
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.facilityImg {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* For textbox-less display of text */
-#mainFacilities {
-    color: black;
-}
-
-/* Three-Column Layout */
-.unequalColumn {
-    float: left;
-    padding: 20px;
-}
-
-/* If graphics is thinner than 25% width on the column would allow, then
-the column shouldn't take up that extra space */
-.eyecatch {
-    max-width: 25%;
-}
-
-.middle {
-    width: 40%;
-}
-
-.extra {
-    width: 20%;
-}
-
-.unequalColumns:after {
-    content: "";
-    display: table;
-    clear: both;
+.facilities_about {
+    margin-left: var(--content-offset);
+    width: var(--content-width);
 }
 
 /* Styling for the staff sections */
-.facilitiesPersonnel {
+.facilities_personnel {
+    margin-left: var(--content-offset);
+    width: var(--content-width);
     display: flex;
 }
 

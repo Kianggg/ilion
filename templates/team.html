@@ -6,10 +6,18 @@
 
 {% block body %}
     <div id="main">
+        <div class="title"><em><strong>/</strong>{{ self.title() }}</em></div>
         <div class="grid-container">
             {% for dog in roster %}
                 {% set dog_thumbnail = 'thumb_' + dog + '.png' %}
-                <div class="grid-item"><div id="thumbnail"><a href="/profile/{{ dog }}"><img src="{{ url_for ('static', filename=dog_thumbnail) }}"></a>{{ dog|capitalize }}</div></div>
+                <div class="grid-item">
+                    <div id="thumbnail">
+                        <a href="/profile/{{ dog }}">
+                            <img src="{{ url_for ('static', filename=dog_thumbnail) }}">
+                        </a>
+                        <a class="profile_button" href="/profile/{{ dog }}"><em>{{ dog|capitalize }}</em></a>
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>
