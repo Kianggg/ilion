@@ -82,7 +82,7 @@ body {
 
 #logo {
     position: absolute;
-    height: 75px;
+    height: 13vh;
     width: auto;
     top: 22px;
     left: 22px;
@@ -126,15 +126,27 @@ LANDING PAGE STUFF
 }
 
 #splash {
-    display: flex;
+    position: absolute;
 
-    margin-left: auto;
-    margin-right: 0;
+    left: 28%;
+}
 
+#splash_art {
     width: auto;
     height: 90vh;
 
     border-radius: 10px;
+}
+
+/* "We are building a future for sled dogs!" banner */
+#future {
+    position: fixed;
+    display: flex;
+
+    top: 50%;
+
+    width: auto;
+    height: 8vh;
 }
 
 #splash_container {
@@ -412,11 +424,11 @@ ul {
     position: fixed; /* Position them relative to the browser window */
     left: 30px; /* Position them just slightly outside of the screen */
     padding: 10px; /* 10px padding */
-    width: 220px; /* Set a specific width */
+    width: 195px; /* Set a specific width */
     text-decoration: none; /* Remove underline */
     text-align: center; /* Center the text */
     font-family: "Nasalization";
-    font-size: 32px; /* Increase font size */
+    font-size: 28px; /* Increase font size */
     color: white; /* Text color */
     background-image: url("menu_button.png"); /* Pointy-ended button */
     background-size: 100% 100%; /* Making sure it's not enormous */
@@ -440,9 +452,9 @@ ul {
 .accordion {
     color:  white; /* Button class overwrites font styling, so I have to re-add it here */
     font-family: "Nasalization";
-    font-size: 32px;
+    font-size: 28px;
 
-    width: 242px; /* Sizing it to look like the others */
+    width: 217px; /* Sizing it to look like the others */
     height: 55px;
     margin-bottom: -32px;
 
