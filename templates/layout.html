@@ -141,6 +141,13 @@
         </div>
 
         <script>
+          /* Set the landing page to initial window size, don't resize elements when window size changes */
+          $(document).ready(function() {
+            var initialWidth = $(window).width();
+            $('#landing_page').css('width', initialWidth + 'px');
+          });
+
+
           /* Javascript for Accordion sidebar, I got this from W3Schools */
           var acc = document.getElementsByClassName("accordion");
           var i;

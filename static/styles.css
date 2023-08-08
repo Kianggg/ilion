@@ -120,9 +120,10 @@ LANDING PAGE STUFF
 }
 
 #landing_page {
+    position: absolute;
     height: 94vh;
-    width: 100vw;
     display: flex;
+    overflow: hidden;
 }
 
 #splash {
@@ -140,13 +141,13 @@ LANDING PAGE STUFF
 
 /* "We are building a future for sled dogs!" banner */
 #future {
-    position: fixed;
+    position: absolute;
     display: flex;
 
     top: 50%;
 
     width: auto;
-    height: 8vh;
+    height: 10vh;
 }
 
 #splash_container {
@@ -166,21 +167,23 @@ LANDING PAGE STUFF
 }
 
 #paw_prints {
-    display: flex;
-    position: fixed;
+    position: absolute;
+    display: block;
     width: auto;
     height: 45vh;
-    right: 0;
+
+    right: 15%;
+
     opacity: 0.9;
 }
 
 #ticker {
-    position: fixed;
+    position: absolute;
     display: block;
 
     max-width: 100%;
 
-    top: 45%;
+    top: 47%;
 }
 
 .ticker_text {
@@ -189,29 +192,29 @@ LANDING PAGE STUFF
 }
 
 #ticker_line {
+    position: absolute;
     max-width: 100%;
-    position: fixed;
-    right: 0;
+    left: 10%;
     height: 4vh;
 }
 
 #team_ilion {
-    position: fixed;
+    position: absolute;
     display: flex;
 
-    bottom: 10%;
-    right: 5%;
+    right: 22%;
+    bottom: 5%;
 
     width: auto;
     height: 30vh;
 }
 
 #join_us {
-    position: fixed;
+    position: absolute;
     display: flex;
 
-    bottom: 7%;
-    right: 3%;
+    right: 20%;
+    bottom: 1%;
 
     width: auto;
     height: 12vh;
