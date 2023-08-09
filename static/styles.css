@@ -20,9 +20,8 @@
     --content-width: calc(100vw - var(--content-offset) - var(--sidebar-size));
 
     --team-grid-cell-size: 350px;
-    --gallery-height: 700px;
     --profile-font-size: 24px;
-    --scrolling-box-height: 400px;
+    --scrolling-box-height: 50vh;
     --facilities-logo-size: 256px;
     --staff-profile-pic-size: 256px;
 }
@@ -45,6 +44,30 @@ body {
     background-position: left bottom;
     background-repeat: repeat-x;
 }
+
+/* Scrollbar Stuff */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--transparent-light-blue);
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--transparent-ilion-blue); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--ilion-blue);
+  }
+
+/* End of Scrollbar Stuff */
 
 #main {
     position: fixed;
@@ -500,14 +523,17 @@ ul {
 /* ------------------------------------------ */
 
 #aboutPageWrapper {
+    position: fixed;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    overflow: hidden;
+
     display: flex;
 }
 
 #gallery {
-    width: 50%;
+    background-image: url("profile_bg.png");
     float: left;
-    margin-right: 15px;
-    margin-bottom: 80px;
     /* border: 7px solid red; */
 }
 
@@ -520,7 +546,16 @@ ul {
 }
 
 /* The grid: Three equal columns that float next to each other */
+.row {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 75%;
+}
+
+
 .column {
+    text-align: center;
+    height: 20vh;
     float: left;
     width: 30%;
     padding: 5px;
@@ -528,7 +563,7 @@ ul {
   
   /* Style the images inside the grid */
 .column img {
-    width: 100%;
+    max-height: 100%;
     opacity: 0.8;
     cursor: pointer;
 }
@@ -553,11 +588,12 @@ ul {
 
 #expandedImg {
     width: 100%;
-    max-height: var(--gallery-height);
+    border-radius: 10px;
+    height: 60vh;
 }
 
 #galleryFrame {
-    height: var(--gallery-height);
+    margin-top: 10%;
     display: flex;
 }
   
@@ -573,10 +609,11 @@ ul {
 /* Trapezoid-shaped tabs that control the info panels */
 
 #aboutTabs {
+    margin-top: 10%;
     position: relative;
     height: 50px;
     /* border: 3px solid rgb(33, 32, 139); */
-    bottom: 55px;
+    z-index: 1;
 }
 
 #tab {
@@ -601,26 +638,31 @@ ul {
 
 /* For spacing and content reveal on the info page */
 .toggleInfo {
+    transform: translate(-10%, 0%);
     position: relative;
-    bottom: 66px;
     transition: 0.3s;
 }
 
 /* Textbox variation that appears on a dog's info page */
 .dogTextbox {
-    background-color: var(--light-blue);
-    color: rgb(49, 49, 49);
-    border-radius: 25px;
 
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 25px;
-    padding-right: 25px;
+    color: white;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
 
     margin-top: 15px;
     margin-bottom: 15px;
 
     font-size: var(--profile-font-size);
+}
+
+.dogTextboxBackground {
+    background-image: url("text_box_wide.png");
+    background-size: 96% 96%;
+    background-repeat: no-repeat;
 }
 
 .dogTextbox p {
@@ -629,14 +671,17 @@ ul {
     font-weight: bold;
 }
 
-#data .dogTextbox {
+#scrollingBox {
     max-height: var(--scrolling-box-height);
     overflow: auto;
-}
+    /* Make the area that displays and scrolls text slightly smaller than the background */
+    position: relative;
+    top: 25px;
+    padding-top: 0px;
+    padding-bottom: 50px;
 
-#interview .dogTextbox {
-    max-height: var(--scrolling-box-height);
-    overflow: auto;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 7%, black 75%, transparent 89%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 7%, black 75%, transparent 89%);
 }
 
 /* ----------------------------- */

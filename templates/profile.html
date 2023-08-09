@@ -56,35 +56,46 @@
         </div>
 
         <div class="toggleInfo" id="data" style="display:block">
-            <div class="dogTextbox">
-                <p>{{ dog.about|safe }}</p>
+            <div class="dogTextboxBackground">
+                <div class="dogTextbox">
+                    <p>{{ dog.about|safe }}</p>
+                </div>
             </div>
 
-            <div class="dogTextbox">
-                <p>{{ dog.story|safe }}</p>
+            <div class="dogTextboxBackground">
+                <div class="dogTextbox"  id="scrollingBox">
+                    <p>{{ dog.story|safe }}</p>
+                </div>
             </div>
         </div>
 
         <div class="toggleInfo" id="stats" style="display:none">
-            <div class="dogTextbox">
-                <p>{{ dog.stats|safe }}</p>
+            <div class="dogTextboxBackground">
+                <div class="dogTextbox">
+                    <p>{{ dog.stats|safe }}</p>
+                </div>
             </div>
 
-            <div class="dogTextbox">
-                <h1>Fun Facts</h1>
-                <p>{{ dog.facts|safe }}</p>
+            <div class="dogTextboxBackground">
+                <div class="dogTextbox">
+                    <p>{{ dog.facts|safe }}</p>
+                </div>
             </div>
 
-            <div class="dogTextbox">
-                <h1>Musher's Comment</h1>
-                <p>{{ dog.comment|safe }}</p>
+            <div class="dogTextboxBackground">
+                <div class="dogTextbox" id="scrollingBox">
+                    <h1>Musher's Comment</h1>
+                    <p>{{ dog.comment|safe }}</p>
+                </div>
             </div>
         </div>
 
         <div class="toggleInfo" id="interview" style="display:none">
-            <div class="dogTextbox">
-                <h1>Interview</h1>
-                <p>{{ dog.interview|safe }}</p>
+            <div class="dogTextboxBackground">
+                <div class="dogTextbox" id="scrollingBox">
+                    <h1>Interview</h1>
+                    <p>{{ dog.interview|safe }}</p>
+                </div>
             </div>
         </div>
     </div>
