@@ -14,6 +14,10 @@
     {% set pic_2 = 'dog_' + dog.name|lower + '_2.jpg' %}
     {% set pic_3 = 'dog_' + dog.name|lower + '_3.jpg' %}
 
+    <div id="dog_name">
+        {{dog.name|upper}}
+    </div>
+
     <div id="gallery">
         
         <!-- Standardize the height of the images -->
@@ -50,9 +54,9 @@
     <div id="info">
 
         <div id="aboutTabs">
-            <button id="tab" onclick="openTab('interview')">Interview</button>
-            <button id="tab" onclick="openTab('stats')">Facts</button>
-            <button id="tab" onclick="openTab('data')">About</button>
+            <button class="tab" id="interview_tab" onclick="openTab('interview')"></button>
+            <button class="tab" id="facts_tab" onclick="openTab('stats')"></button>
+            <button class="tab" id="about_tab" onclick="openTab('data')"></button>
         </div>
 
         <div class="toggleInfo" id="data" style="display:block">
