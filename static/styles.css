@@ -399,6 +399,10 @@ ul {
 }
 
 #thumbnail {
+    position: relative;
+    height: var(--team-grid-cell-size);
+    width: var(--team-grid-cell-size);
+
     display: grid;
     place-items: center;
     background-image: url(text_box_wide.png);
@@ -412,13 +416,15 @@ ul {
     font-size: xx-large;
     color: white;
 
-    margin-top: -25%;
+    margin-top: 60%;
     width: 80%;
 
     background-color: var(--transparent-dark-blue);
     border: 2px solid var(--transparent-ilion-blue);
     border-radius: 10px;
     transition: 0.2s;
+
+    z-index: 1;
 }
 
 .profile_button:hover {
@@ -431,8 +437,17 @@ ul {
 }
 
 .grid-item img {
-    margin-top: -40px;
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    bottom: 6px;
+
     max-height: calc(var(--team-grid-cell-size) + 30px);
+    max-width: var(--team-grid-cell-size);
 }
 
 /* Make the sidebar move while scrolling */
