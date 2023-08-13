@@ -15,7 +15,11 @@
     {% set pic_3 = 'dog_' + dog.name|lower + '_3.jpg' %}
 
     <div id="dog_name">
-        <em>{{dog.name|upper}}</em>
+        {% if dog.name == "Little_Kikky" %}
+            <em style="font-size: 64px;">LITTLE KIKKY</em>
+        {% else %}
+            <em>{{dog.name|upper}}</em>
+        {% endif %}
     </div>
 
     <div id="gallery">
