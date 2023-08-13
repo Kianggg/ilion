@@ -3,6 +3,7 @@
 # Imports
 from flask import Flask, render_template, url_for
 import os
+import random
 from pathlib import Path
 
 # Configure application
@@ -27,7 +28,7 @@ for filename in os.listdir(ILION / 'dogs'):
 # LANDING PAGE
 @app.route("/")
 def index():
-    return render_template("layout.html")
+    return render_template("layout.html", image = random.randint(1, 2))
 
 # ABOUT
 @app.route("/about")

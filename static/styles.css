@@ -69,6 +69,19 @@ body {
 
 /* End of Scrollbar Stuff */
 
+.view {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to right, transparent 0% 10%, white 10% 100%);
+    background-repeat-y: repeat;
+}
+
+#indexView {
+    height: auto;
+    width: auto;
+    background-image: none;
+}
+
 #main {
     position: fixed;
     height: -webkit-fill-available;
@@ -76,6 +89,8 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
     background-image: url("background_white.png");
+    background-size: 50%;
+    background-repeat-x: no-repeat;
 }
 
 .title {
@@ -144,7 +159,7 @@ LANDING PAGE STUFF
 
 #landing_page {
     position: absolute;
-    height: 94vh;
+    height: 100vh;
     display: flex;
     overflow: hidden;
 }
@@ -279,6 +294,9 @@ CSS Ticker that I got from Lewis Carey: https://codepen.io/lewismcarey/pen/GJZVo
 
     padding-left: 100%;
     box-sizing: content-box;
+
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 10%, black 15%);
+    mask-image: linear-gradient(to right, transparent 0%, transparent 10%, black 15%);
 }
 
 .ticker_text {
