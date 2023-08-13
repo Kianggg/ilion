@@ -82,6 +82,12 @@ body {
     background-image: none;
 }
 
+#dogsView {
+    height: auto;
+    width: auto;
+    background-image: none;
+}
+
 #main {
     position: fixed;
     height: -webkit-fill-available;
