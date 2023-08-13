@@ -15,7 +15,11 @@
                         <a href="/profile/{{ dog }}">
                             <img src="{{ url_for ('static', filename=dog_thumbnail) }}">
                         </a>
-                        <a class="profile_button" href="/profile/{{ dog }}"><em>{{ dog|capitalize }}</em></a>
+                        {% if dog == "little_kikky" %}
+                            <a class="profile_button" href="/profile/{{ dog }}"><em>Little Kikky</em></a>
+                        {% else %}
+                            <a class="profile_button" href="/profile/{{ dog }}"><em>{{ dog|capitalize }}</em></a>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

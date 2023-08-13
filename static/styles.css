@@ -532,7 +532,15 @@ ul {
 }
 
 #dog_name {
+    position: fixed;
+    top: 5%;
+    left: 392px;
+    writing-mode: vertical-lr;
+    transform: rotateX(180deg) rotateY(180deg);
+    -webkit-text-stroke: 1px var(--light-blue);
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
     font-family: "Rexlia";
+    font-size: 112px;
 }
 
 #gallery {
@@ -552,6 +560,7 @@ ul {
 
 /* The grid: Three equal columns that float next to each other */
 .row {
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     max-width: 75%;
@@ -584,15 +593,16 @@ ul {
     clear: both;
 }
   
-/* Big image that shows what you have selected (or dog's deafult pic) */
+/* Big image that shows what you have selected (or dog's default pic) */
 .bigPic {
     position: relative;
     display: block;
-    margin: auto;
+    margin-left: 205px;
 }
 
 #expandedImg {
-    width: 100%;
+    object-fit: contain;
+    max-width: 462px;
     border-radius: 10px;
     height: 60vh;
 }

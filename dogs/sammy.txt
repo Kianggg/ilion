@@ -1,5 +1,5 @@
-SAMMY
-NAME: SAMMY<br>BREED: SAMOYED<br>FROM: SIBERIA<br>POSITION: WHEEL<br>TEAM: LONG-DISTANCE<br>ARTIST: <a href="https://twitter.com/ywyw_MNTL">Sore</a><br>
+Sammy
+NAME: Sammy<br>BREED: Samoyed<br>FROM: Siberia<br>POSITION: Wheel<br>TEAM: Long-Distance<br>ARTIST: <a href="https://twitter.com/ywyw_MNTL">Sore</a><br>
 &emsp;&emsp; Sammy is a gentle-natured sled dog who comes from a remote area in Siberia. She wasn't very diligent, but she loved to run and worked hard during her studies to become a sled dog. Before she was able to debut in her first race, her musher decided to retire and she was given to the Ilion musher. Her original musher spoke highly of her talent and strength, and believed that Ilion's musher would help her future growth and potential. Now she resides in Alaska at the sanctuary where she finally gets to train and race in competitions!
 STRENGTH: &#x2B50 &#x2B50<br>ENDURANCE: &#x2B50 &#x2B50 &#x2B50 &#x2B50<br>SPEED: &#x2B50 &#x2B50 &#x2B50<br>DETERMINATION: &#x2B50 &#x2B50 &#x2B50 &#x2B50 &#x2B50<br>
 &#x1F43E She's a big eater. Raw deer meat is her favorite food, and she gets disappointed whenever it's not being served for dinner.
