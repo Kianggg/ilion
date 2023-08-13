@@ -72,7 +72,7 @@ def clinic():
 
 @app.route("/cafe")
 def cafe():
-    return render_template("cafe.html")
+    return render_template("cafe.html", isCafe = True)
 
 @app.route("/salon")
 def salon():

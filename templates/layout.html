@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Squada+One">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+        <!-- Flickity for carousels -->
+        <link rel="stylesheet" href="/static/flickity.css" media="screen">
         <!-- Site Title -->
         <title>{% block title %}{% endblock %}</title>
         <meta name="viewport" content="width=1024">
@@ -50,7 +52,7 @@
                       <p>
                           <ul>
                           <li><a class="popout" id="clinicTab"><em>CLINIC</em></a></li>
-                          <li><a class="popout" id="cafeTab"><em>CAFE</em></a></li>
+                          <li><a class="popout" href="/cafe" id="cafeTab"><em>CAFE</em></a></li>
                           <li><a class="popout" id="salonTab"><em>DOG SALON</em></a></li>
                           <li><a class="popout" id="daycareTab"><em>DAY CARE</em></a></li>
                           </ul>
@@ -80,9 +82,12 @@
           </div>
 
           <!-- CAFE -->
-          <div class="view" id="cafeView" style="display: none;">
-            {% include "cafe.html" %}
-          </div>
+          {% if (isCafe == True) %}
+            <div class="view" id="cafeView">
+              {% block cafe %}
+              {% endblock %}
+            </div>
+          {% endif %}
 
           <!-- CLINIC -->
           <div class="view" id="clinicView" style="display: none;">
@@ -95,7 +100,7 @@
           </div>
 
           <!-- INDEX -->
-          {% if (isTeam == True) %}
+          {% if ((isTeam == True) or (isCafe == True)) %}
             <div class="view" id="indexView" style="display: none;">
               {% include "index.html" %}
             </div>
@@ -141,7 +146,23 @@
 
         </div>
 
+        <!-- Extension Flickity used for carousel -->
+        <!-- https://flickity.metafizzy.co/ -->
+        <script src="/static/flickity.pkgd.js"></script>
+
         <script>
+          // Flickity initialization
+          $(document).ready(function () {
+              $('.carousel').flickity({
+                  wrapAround: true,
+                  freeScroll: true,
+                  imagesLoaded: true,
+                  prevNextButtons: false,
+                  pageDots: false,
+                  lazyLoad: 3
+              });
+          });
+      
           /* Set the landing page to initial window size, don't resize elements when window size changes */
           $(document).ready(function() {
             var initialWidth = $(window).width();
@@ -188,7 +209,7 @@
             // Set up the tabs to load the correct views
             $("#aboutTab").click(function() { load_view('about') } );
             $("#blogTab").click(function() { load_view('blog') } );
-            $("#cafeTab").click(function() { load_view('cafe') } );
+            //$("#cafeTab").click(function() { load_view('cafe') } );
             $("#clinicTab").click(function() { load_view('clinic') } );
             $("#daycareTab").click(function() { load_view('daycare') } );
             $("#indexTab").click(function() { load_view('index') } );

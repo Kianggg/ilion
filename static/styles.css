@@ -792,6 +792,20 @@ ul {
     text-align: left;
 }
 
+.carousel {
+    background: white;
+    width: var(--content-width);
+    margin-left: var(--content-offset);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+  
+.carousel img {
+    display: block;
+    height: 25vh;
+    margin-right: 20px;
+}
+
 /* ----------------------------------------------- */
 /* CSS for Modal Images that I got from W3 Schools */
 /* ----------------------------------------------- */
