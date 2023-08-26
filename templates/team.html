@@ -5,24 +5,26 @@
 {% endblock %}
 
 {% block body %}
-    <div id="main">
-        <div class="title"><em><strong>/</strong>{{ self.title() }}</em></div>
-        <div class="grid-container">
-            {% for dog in roster %}
-                {% set dog_thumbnail = 'thumb_' + dog + '.png' %}
-                <div class="grid-item">
-                    <div id="thumbnail">
-                        <a href="/profile/{{ dog }}">
-                            <img src="{{ url_for ('static', filename=dog_thumbnail) }}">
-                        </a>
-                        {% if dog == "little_kikky" %}
-                            <a class="profile_button" href="/profile/{{ dog }}"><em>Little Kikky</em></a>
-                        {% else %}
-                            <a class="profile_button" href="/profile/{{ dog }}"><em>{{ dog|capitalize }}</em></a>
-                        {% endif %}
+    <div class="white_bg">
+        <div id="main">
+            <div class="title"><em><strong>/</strong>{{ self.title() }}</em></div>
+            <div class="grid-container">
+                {% for dog in roster %}
+                    {% set dog_thumbnail = 'thumb_' + dog + '.png' %}
+                    <div class="grid-item">
+                        <div id="thumbnail">
+                            <a href="/profile/{{ dog }}">
+                                <img src="{{ url_for ('static', filename=dog_thumbnail) }}">
+                            </a>
+                            {% if dog == "little_kikky" %}
+                                <a class="profile_button" href="/profile/{{ dog }}"><em>Little Kikky</em></a>
+                            {% else %}
+                                <a class="profile_button" href="/profile/{{ dog }}"><em>{{ dog|capitalize }}</em></a>
+                            {% endif %}
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -82,6 +82,13 @@ body {
     background-image: none;
 }
 
+.white_bg {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to right, transparent 0% 10%, white 10% 100%);
+    background-repeat-y: repeat;
+}
+
 #dogsView {
     height: auto;
     width: auto;
@@ -573,7 +580,7 @@ ul {
 #dog_name {
     position: fixed;
     top: 5%;
-    left: 392px;
+    left: 425px;
     writing-mode: vertical-lr;
     transform: rotateX(180deg) rotateY(180deg);
     -webkit-text-stroke: 1px var(--light-blue);
@@ -636,7 +643,7 @@ ul {
 .bigPic {
     position: relative;
     display: block;
-    margin-left: 205px;
+    margin-left: 230px;
 }
 
 #expandedImg {
@@ -734,7 +741,6 @@ ul {
 .dogTextbox p {
     text-align: left;
     font-size: var(--profile-font-size);
-    font-weight: bold;
 }
 
 #scrollingBox {
@@ -766,10 +772,11 @@ ul {
 /* Styling for the staff sections */
 .facilities_personnel {
     margin-left: var(--content-offset);
-    width: var(--content-width);
+    /* width: var(--content-width); */
     display: flex;
 }
 
+/* Left column */
 .staffAbout {
     float: left;
     padding: 10px;
@@ -778,6 +785,7 @@ ul {
     width: 70%;
 }
 
+/* Right column */
 .staffPic {
     float: left;
     padding: 10px;
@@ -786,6 +794,37 @@ ul {
 
     display: flex;
     align-items: center;
+}
+
+/* About page variations on shared elements */
+#about_page_textbox {
+    height: 35vh;
+    max-height: 35vh;
+
+    padding-top: 22px;
+    padding-left: 47px;
+    padding-right: 60px;
+}
+
+#about_page_textbox p {
+    font-size: 19px;
+}
+
+/* Copied but the for the about page */
+.about_left {
+    float: left;
+    padding: 10px;
+    margin-left: 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Copied but the for the about page */
+.about_right {
+    float: left;
+    padding: 10px;
+    width: 70%;
 }
 
 .staffAbout p {
