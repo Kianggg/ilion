@@ -11,6 +11,8 @@
 
     --warm-grey: #383230;
     --offwhite: #e6e0d4;
+    --stamp-orange: #ffe9dc;
+    --stamp-orange-border: #ff9479;
 
     /* "--content-offset" is how far over to the right things need to be in order to NOT collide with the dithered white border */
     --content-offset: 285px;
@@ -843,6 +845,78 @@ ul {
     display: block;
     height: 25vh;
     margin-right: 20px;
+}
+
+/* --------------------------------------------------------------------- */
+/* The is for the blog. Lord so help me if there are any more variations */
+/* --------------------------------------------------------------------- */
+
+
+.blog_textbox {
+    background-image: url("blog_post_w_bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 575px;
+
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 55px;
+    padding-right: 55px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.blog_textbox p {
+    font-size: small;
+}
+
+#blog_title {
+    float: left;
+    text-align: center;
+    width: 47%;
+
+    font-size: x-large;
+    background-image: url("blog_title.png");
+    background-size: 100% 100%;
+    font-family: "Nasalization";
+}
+
+#blog_date {
+    float: right;
+    text-align: center;
+    width: 30%;
+    font-family: "Nasalization";
+
+    margin-top: 10px;
+}
+
+#blog_stamp {
+    transform: translate(270px, 35px);
+    float: right;
+    height: 120px;
+    width: 120px;
+    text-align: center;
+
+    margin-top: -80px;
+
+    background-color: var(--stamp-orange);
+    border-radius: 50%;
+    border: 2px solid var(--stamp-orange-border);
+
+    font-family: "Nasalization";
+    color: var(--stamp-orange-border);
+    font-size: 11px;
+
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#blog_chibi {
+    margin-top: -14px;
 }
 
 /* ----------------------------------------------- */
