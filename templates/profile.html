@@ -38,16 +38,16 @@
 
         <!-- The gallery of images -->
         <!-- Whatever is in "alt" will be the caption when the image is clicked, leave blank for no caption -->
-        <div class="row">
-            <div class="column">
-            <img src="{{ url_for ('static', filename=pic_1) }}" alt="" onclick="myFunction(this);">
+        <div class="dog_profile_row">
+            <div class="dog_profile_column">
+                <img src="{{ url_for ('static', filename=pic_1) }}" alt="" onclick="myFunction(this);">
             </div>
-            <div class="column">
-            <img src="{{ url_for ('static', filename=pic_2) }}" alt="" onclick="myFunction(this);">
+            <div class="dog_profile_column">
+                <img src="{{ url_for ('static', filename=pic_2) }}" alt="" onclick="myFunction(this);">
             </div>
-            <div class="column">
+            <!--<div class="column">
             <img src="{{ url_for ('static', filename=pic_3) }}" alt="" onclick="myFunction(this);">
-            </div>
+            </div>-->
         </div>
     </div>
 
@@ -70,9 +70,10 @@
                 </div>
             </div>
 
+            <!-- Inline styling for just these two elements! -->
             <div class="dogTextboxBackground">
                 <div class="dogTextbox"  id="scrollingBox">
-                    <p>{{ dog.story|safe }}</p>
+                    <p style="font-size: 19px;">{{ dog.story|safe }}</p>
                 </div>
             </div>
         </div>
@@ -90,10 +91,11 @@
                 </div>
             </div>
 
+            <!-- Inline styling for just these two elements! -->
             <div class="dogTextboxBackground">
                 <div class="dogTextbox" id="scrollingBox">
                     <h1>Musher's Comment</h1>
-                    <p>{{ dog.comment|safe }}</p>
+                    <p style="font-size: 19px;">{{ dog.comment|safe }}</p>
                 </div>
             </div>
         </div>

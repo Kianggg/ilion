@@ -2,6 +2,21 @@
     <img class="facilities_about" src="{{url_for ('static' , filename='salon_about.png')}}" alt="Salon"/>
 
     <div class="facilities_personnel">
+        <div class="about_left">
+            <div id="salon_slideshow">
+                <a><img src="{{url_for ('static' , filename='slide_1.png')}}"></a>
+                <a><img src="{{url_for ('static' , filename='slide_2.png')}}"></a>
+                <a><img src="{{url_for ('static' , filename='slide_4.png')}}"></a>
+            </div>
+        </div>
+        <div class="about_right">
+            <p>
+                A beauty salon or beauty parlor is an establishment that provides cosmetic treatments for people. Other variations of this type of business include hair salons, spas, day spas, and medical spas.
+            </p>
+        </div>
+    </div>
+
+    <div class="facilities_personnel">
         <div class="staffAbout">
             <p>
                 <strong>Paris ~ Ilion's Dog Groomer</strong><br>
@@ -9,7 +24,7 @@
             </p>
         </div>
         <div class="staffPic">
-            <img class="staffThumb" src="{{url_for ('static' , filename='parisprofilethumb.png')}}" alt="Paris ~ Ilion's Dog Groomer"/>
+            <img class="staffThumb" src="{{url_for ('static' , filename='staff_salon_00.png')}}" alt="Paris ~ Ilion's Dog Groomer"/>
             <!-- This second img is a dummy used by the modal to open a different img than the one that was clicked -->
             <img id="staffFull" src="{{url_for ('static' , filename='parisprofilefull.png')}}" style="display: none;"/>
         </div>

@@ -1,5 +1,28 @@
 <div id="main">
-    <div class="textbox">
-        <h1>Under Construction</h1>
+    <img class="facilities_about" src="{{url_for ('static' , filename='daycare_about.png')}}" alt="Daycare"/>
+
+    <div class="facilities_personnel">
+        <div class="about_left">
+            <img src="{{url_for ('static' , filename='slide_6.png')}}">
+        </div>
+        <div class="about_right">
+            <p>
+                Daycare for dogs. Daycare for dogs. Daycare for dogs. Daycare for dogs. Daycare for dogs. Daycare for dogs. Daycare for dogs. Daycare for dogs. Daycare for dogs. Daycare for dogs. Daycare for dogs. Daycare for dogs. 
+            </p>
+        </div>
+    </div>
+
+    <div class="facilities_personnel">
+        <div class="staffAbout">
+            <p>
+                <strong>Nanny ~ Dog Caretaker</strong><br>
+                &emsp;There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+            </p>
+        </div>
+        <div class="staffPic">
+            <img class="staffThumb" src="{{url_for ('static' , filename='staff_daycare_00.png')}}" alt="Nanny ~ Dog Caretaker"/>
+            <!-- This second img is a dummy used by the modal to open a different img than the one that was clicked -->
+            <img id="staffFull" src="{{url_for ('static' , filename='nannyprofilefull.png')}}" style="display: none;"/>
+        </div>
     </div>
 </div>

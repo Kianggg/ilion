@@ -31,9 +31,21 @@
           <div id="sidebarSpacing">
             <div id="mainSidebar" class="sidebar">
               <ul>
-                <li><a id="aboutTab"><em>ABOUT</em></a></li>
+                <li>
+                  <button class="accordion"><em>ABOUT</em></button>
+                  <div class="teamsPanel">
+                      <p>
+                          <ul>
+                          <li><a class="popout" id="aboutTab"><em>ABOUT US</em></a></li>
+                          <li><a class="popout" id="musherTab"><em>ILION'S MUSHER</em></a></li>
+                          </ul>
+                      </p>
+                  </div>
+                </li>
 
-                <!-- Very jank offset so that it matches the other buttons -->
+                <li><a id="teamTab" href="/team"><em>DOGS</em></a></li>
+
+                <!-- Very jank offset so that it matches the other buttons
                 <li>
                 <button class="accordion"><em>DOGS</em></button>
                 <div class="teamsPanel">
@@ -44,7 +56,7 @@
                     </ul>
                   </p>
                 </div>
-                </li>
+                </li> -->
 
                 <li>
                   <button class="accordion"><em>FACILITIES</em></button>
@@ -58,9 +70,9 @@
                           </ul>
                       </p>
                   </div>
-              </li>
+                </li>
 
-                <li><a id="sponsorsTab"><em>SPONSORS</em></a></li>
+                <li><a id="contactTab"><em>CONTACT</em></a></li>
                 <li><a id="blogTab"><em>BLOG</em></a></li>
                 <li><a id="supportTab"><em>SUPPORT US</em></a></li>
               </ul>
@@ -74,6 +86,11 @@
           <!-- ABOUT -->
           <div class="view" id="aboutView" style="display: none;">
             {% include "about.html" %}
+          </div>
+
+          <!-- MUSHER -->
+          <div class="view" id="musherView" style="display: none;">
+            {% include "musher.html" %}
           </div>
 
           <!-- BLOG -->
@@ -109,16 +126,15 @@
               {% include "index.html" %}
             </div>
           {% endif %}
-
-
+          
           <!-- SALON -->
           <div class="view" id="salonView" style="display: none;">
             {% include "salon.html" %}
           </div>
 
-          <!-- SPONSORS -->
-          <div class="view" id="sponsorsView" style="display: none;">
-            {% include "sponsors.html" %}
+          <!-- CONTACT -->
+          <div class="view" id="contactView" style="display: none;">
+            {% include "contact.html" %}
           </div>
 
           <!-- SUPPORT -->
@@ -149,6 +165,43 @@
         <!-- Extension Flickity used for carousel -->
         <!-- https://flickity.metafizzy.co/ -->
         <script src="/static/flickity.pkgd.js"></script>
+
+        <!--  SLIDESHOW SCRIPTS, EACH SLIDESHOW NEEDS DIFFERENT ID TO ACCOUNT FOR LENGTH -->
+
+        
+        <script>
+            // Original JavaScript code by Chirp Internet: www.chirpinternet.eu
+            // Please acknowledge use of this code by including this header.
+            window.addEventListener("DOMContentLoaded", function(e) {
+              var stage = document.getElementById("slideshow");
+              var fadeComplete = function(e) { stage.appendChild(arr[0]); };
+              var arr = stage.getElementsByTagName("a");
+              for(var i=0; i < arr.length; i++) {
+                arr[i].addEventListener("animationend", fadeComplete, false);
+              }
+
+            }, false);
+
+            window.addEventListener("DOMContentLoaded", function(e) {
+              var stage = document.getElementById("cafe_slideshow");
+              var fadeComplete = function(e) { stage.appendChild(arr[0]); };
+              var arr = stage.getElementsByTagName("a");
+              for(var i=0; i < arr.length; i++) {
+                arr[i].addEventListener("animationend", fadeComplete, false);
+              }
+
+            }, false);
+
+            window.addEventListener("DOMContentLoaded", function(e) {
+              var stage = document.getElementById("salon_slideshow");
+              var fadeComplete = function(e) { stage.appendChild(arr[0]); };
+              var arr = stage.getElementsByTagName("a");
+              for(var i=0; i < arr.length; i++) {
+                arr[i].addEventListener("animationend", fadeComplete, false);
+              }
+
+            }, false);
+      </script>
 
         <script>
           // Flickity initialization
@@ -208,13 +261,14 @@
 
             // Set up the tabs to load the correct views
             $("#aboutTab").click(function() { load_view('about') } );
+            $("#musherTab").click(function() { load_view('musher') } );
             $("#blogTab").click(function() { load_view('blog') } );
             //$("#cafeTab").click(function() { load_view('cafe') } );
             $("#clinicTab").click(function() { load_view('clinic') } );
             $("#daycareTab").click(function() { load_view('daycare') } );
             $("#indexTab").click(function() { load_view('index') } );
             $("#salonTab").click(function() { load_view('salon') } );
-            $("#sponsorsTab").click(function() { load_view('sponsors') } );
+            $("#contactTab").click(function() { load_view('contact') } );
             $("#supportTab").click(function() { load_view('support') } );
 
             // By default, load the landing page
@@ -258,6 +312,12 @@
             $(".staffThumb").click(function() {
               modal.show();
               modalImg.attr("src", $(this).next().attr("src"));
+              captionText.text($(this).attr("alt"));
+            });
+
+            $("#expandedImg").click(function() {
+              modal.show();
+              modalImg.attr("src", $(this).attr("src"));
               captionText.text($(this).attr("alt"));
             });
 

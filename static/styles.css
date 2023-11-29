@@ -25,7 +25,8 @@
     --profile-font-size: 24px;
     --scrolling-box-height: 50vh;
     --facilities-logo-size: 256px;
-    --staff-profile-pic-size: 256px;
+    --staff-profile-pic-width: 468px;
+    --staff-profile-pic-width: 412px;
 }
 
 html {
@@ -614,7 +615,6 @@ ul {
     max-width: 75%;
 }
 
-
 .column {
     text-align: center;
     height: 20vh;
@@ -623,7 +623,7 @@ ul {
     padding: 5px;
 }
   
-  /* Style the images inside the grid */
+/* Style the images inside the grid */
 .column img {
     max-height: 100%;
     opacity: 0.8;
@@ -640,6 +640,28 @@ ul {
     display: table;
     clear: both;
 }
+
+/* Stuff for VERY specific spacing on the dog profile page */
+.dog_profile_row {
+    margin-top: 20px;
+    margin-left: 125px;
+    margin-right: auto;
+    max-width: 75%;
+}
+
+.dog_profile_column {
+    text-align: center;
+    height: 20vh;
+    float: left;
+    width: 50%;
+}
+
+.dog_profile_column img {
+    max-height: 100%;
+    opacity: 0.8;
+    cursor: pointer;
+}
+/* Dog profile page END*/
   
 /* Big image that shows what you have selected (or dog's default pic) */
 .bigPic {
@@ -740,9 +762,20 @@ ul {
     background-repeat: no-repeat;
 }
 
+/* Needed workaround for about page tabs */
+.dogTextboxBackgroundAboutPage {
+    background-image: url("text_box_wide.png");
+    background-size: 96% 96%;
+    background-repeat: no-repeat;
+}
+
 .dogTextbox p {
     text-align: left;
     font-size: var(--profile-font-size);
+}
+
+.smallerFont {
+    font-size: var(--profile-backstory-font-size);
 }
 
 #scrollingBox {
@@ -751,8 +784,9 @@ ul {
     /* Make the area that displays and scrolls text slightly smaller than the background */
     position: relative;
     top: 25px;
-    padding-top: 0px;
-    padding-bottom: 50px;
+
+    /* padding-top: 0px;
+    padding-bottom: 50px; */
 
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 7%, black 75%, transparent 89%);
     mask-image: linear-gradient(to bottom, transparent 0%, black 7%, black 75%, transparent 89%);
@@ -774,7 +808,7 @@ ul {
 /* Styling for the staff sections */
 .facilities_personnel {
     margin-left: var(--content-offset);
-    /* width: var(--content-width); */
+    width: var(--content-width);
     display: flex;
 }
 
@@ -794,9 +828,10 @@ ul {
     margin-right: 20px;
     width: 20%;
 
-    display: flex;
     align-items: center;
 }
+
+/* Stuff for the ABOUT page */
 
 /* About page variations on shared elements */
 #about_page_textbox {
@@ -809,7 +844,7 @@ ul {
 }
 
 #about_page_textbox p {
-    font-size: 19px;
+    font-size: 18px;
 }
 
 /* Copied but the for the about page */
@@ -829,14 +864,173 @@ ul {
     width: 70%;
 }
 
+.about_page_tabs {
+    margin-top: 5px;
+    margin-left: var(--content-offset);
+    display: flex;
+}
+
+.about_page_tab {
+    float: left;
+    position: relative;
+    left: 0px;
+    height: 92%;
+    font-size: 22px;
+    color: var(--darkest-blue);
+    background-color: rgba(0,0,0,0);
+    font-family: "Nasalization";
+
+    border: none;
+}
+
+.about_page_tab:hover {
+    background-color: var(--transparent-light-blue);
+}
+
+#team_tab {
+    background-image: url("aboutbuttonsmall.png");
+}
+
+#facilities_tab {
+    background-image: url("aboutbuttonmedium.png");
+}
+
+#sponsorship_tab {
+    background-image: url("aboutbuttonlarge.png");
+}
+
+/* Styling for the slideshows, I got this from here: https://www.the-art-of-web.com/css/fading-slideshow-no-jquery/ */
+/* All slideshows need different id */
+#slideshow {
+    height: 500px;
+    width: 700px;
+}
+
+#cafe_slideshow {
+    height: 250px;
+    width: 450px;
+}
+
+#salon_slideshow {
+    height: 300px;
+    width: 450px;
+}
+
+#slideshow a {
+    position: absolute;
+}
+
+#cafe_slideshow a {
+    position: absolute;
+}
+
+#salon_slideshow a {
+    position: absolute;
+}
+
+#slideshow a img {
+    padding: 10px;
+    height: 500px;
+    width: 700px;
+}
+
+#cafe_slideshow a img {
+    padding: 10px;
+    height: 250px;
+    width: 450px;
+}
+
+#salon_slideshow a img {
+    padding: 10px;
+    height: 300px;
+    width: 450px;
+}
+
+#slideshow a:nth-of-type(1) {
+    animation-name: fader;
+    animation-delay: 4s;
+    animation-duration: 1s;
+    z-index: 20;
+}
+
+#slideshow a:nth-of-type(2) {
+    z-index: 10;
+}
+
+#slideshow a:nth-of-type(n+3) {
+    display: none;
+}
+
+#cafe_slideshow a:nth-of-type(1) {
+    animation-name: fader;
+    animation-delay: 4s;
+    animation-duration: 1s;
+    z-index: 20;
+}
+
+#cafe_slideshow a:nth-of-type(2) {
+    z-index: 10;
+}
+
+#cafe_slideshow a:nth-of-type(n+3) {
+    display: none;
+}
+
+#salon_slideshow a:nth-of-type(1) {
+    animation-name: fader;
+    animation-delay: 4s;
+    animation-duration: 1s;
+    z-index: 20;
+}
+
+#salon_slideshow a:nth-of-type(2) {
+    z-index: 10;
+}
+
+#salon_slideshow a:nth-of-type(n+3) {
+    display: none;
+}
+
+@keyframes fader {
+    from { opacity: 1.0; }
+    to   { opacity: 0.0; }
+}
+/* Styling for the slideshow END */
+
+/* Logo and mission statement on the ABOUT page */
+.about_logo {
+    display: block;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 120px;
+}
+
+.mission_statement {
+    font-size: 24px;
+    color: var(--darkest-blue);
+}
+
+/* Stuff for the ABOUT page END */
+
 .staffAbout p {
     text-align: left;
+}
+
+/* This is the text next to the food carousel on the CAFE page */
+#cafe_popular {
+    margin-left: var(--content-offset);
+    writing-mode: vertical-lr;
+    transform: rotateX(180deg) rotateY(180deg);
+    -webkit-text-stroke: 1px var(--light-blue);
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    font-family: "Rexlia";
+    font-size: 36px;
 }
 
 .carousel {
     background: white;
     width: var(--content-width);
-    margin-left: var(--content-offset);
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
     mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
@@ -916,7 +1110,7 @@ ul {
 }
 
 #blog_chibi {
-    margin-top: -14px;
+    margin-top: -8px;
 }
 
 /* ----------------------------------------------- */
@@ -931,8 +1125,7 @@ ul {
 
     margin: auto;
 
-    height: var(--staff-profile-pic-size);
-    width: var(--staff-profile-pic-size);
+    width: 100%;
 }
   
 .staffThumb:hover {opacity: 0.7;}
