@@ -21,12 +21,17 @@
     --sidebar-size: 408px;
     --content-width: calc(100vw - var(--content-offset) - var(--sidebar-size));
 
-    --team-grid-cell-size: 350px;
+    /* Full size is 427x542 but that's gigantic */
+    --team-grid-cell-width: 320px;
+    --team-grid-cell-height: 406px;
+
+    /* Full size is 412x468 */
+    --staff-profile-pic-width: 206px;
+    --staff-profile-pic-height: 234px;
+
     --profile-font-size: 24px;
     --scrolling-box-height: 50vh;
     --facilities-logo-size: 256px;
-    --staff-profile-pic-width: 468px;
-    --staff-profile-pic-width: 412px;
 }
 
 html {
@@ -39,7 +44,7 @@ body {
     font-family: 'Squada One', sans-serif;
     margin: 0px;
 
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
 
     background-image: url("background.png");
@@ -47,6 +52,16 @@ body {
     background-position: left bottom;
     background-repeat: repeat-x;
 }
+
+/* Snow configuration */
+.snowflake {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(white, white);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px white);
+  }
 
 /* Scrollbar Stuff */
 
@@ -417,7 +432,7 @@ ul {
 /* Thanks again to W3Schools for teaching me CSS */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--team-grid-cell-width), 1fr));
     grid-auto-rows: 0.2fr;
     gap: 20px 35px;
 
@@ -427,20 +442,18 @@ ul {
 }
 
 .grid-item {
-    height: var(--team-grid-cell-size);
-    width: var(--team-grid-cell-size);
+    height: var(--team-grid-cell-height);
+    width: var(--team-grid-cell-width);
     text-align: center;
 }
 
 #thumbnail {
     position: relative;
-    height: var(--team-grid-cell-size);
-    width: var(--team-grid-cell-size);
+    height: var(--team-grid-cell-height);
+    width: var(--team-grid-cell-width);
 
     display: grid;
     place-items: center;
-    background-image: url(text_box_wide.png);
-    background-size: 100% 100%;
 }
 
 .profile_button {
@@ -480,8 +493,8 @@ ul {
 
     bottom: 6px;
 
-    max-height: calc(var(--team-grid-cell-size) + 30px);
-    max-width: var(--team-grid-cell-size);
+    max-height: calc(var(--team-grid-cell-height) + 30px);
+    max-width: var(--team-grid-cell-width);
 }
 
 /* Make the sidebar move while scrolling */
@@ -805,6 +818,10 @@ ul {
     width: var(--content-width);
 }
 
+.facilities_image {
+    max-width: calc(var(--content-width) / 2);
+}
+
 /* Styling for the staff sections */
 .facilities_personnel {
     margin-left: var(--content-offset);
@@ -832,6 +849,16 @@ ul {
 }
 
 /* Stuff for the ABOUT page */
+
+.ilion_map {
+    max-width: calc(var(--content-width) / 1.5);
+    border-radius: 20px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.ilion_map:hover {opacity: 0.7;}
 
 /* About page variations on shared elements */
 #about_page_textbox {
@@ -881,6 +908,7 @@ ul {
     font-family: "Nasalization";
 
     border: none;
+    margin-right: 10px;
 }
 
 .about_page_tab:hover {
@@ -996,6 +1024,60 @@ ul {
     to   { opacity: 0.0; }
 }
 /* Styling for the slideshow END */
+
+/* A bunch of stuff for the CLINIC page */
+
+.clinic_staff {
+    width: var(--content-width);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--staff-profile-pic-width), 1fr));
+    grid-gap: 10px;
+    padding: 10px;
+
+    /* Makes room for the tabs */
+    margin-top: 40px;
+}
+
+.clinic_column {
+    text-align: center;
+}
+
+.clinic_staff_thumbnail {
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.clinic_staff_image {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 100%;
+}
+
+.clinic_staff_nametag {
+    text-decoration: none; 
+    text-align: center; 
+    font-family: "Rexlia";
+    font-size: x-large;
+    color: white;
+
+    margin-top: 80%;
+    width: 80%;
+
+    background-color: var(--transparent-dark-blue);
+    border: 2px solid var(--transparent-ilion-blue);
+    border-radius: 10px;
+
+    z-index: 1;
+}
+
+/* A bunch of stuff for the CLINIC page END */
 
 /* Logo and mission statement on the ABOUT page */
 .about_logo {

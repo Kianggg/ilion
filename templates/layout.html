@@ -17,14 +17,18 @@
         <!-- Site Title -->
         <title>{% block title %}{% endblock %}</title>
         <meta name="viewport" content="width=1024">
+        <!-- Snow time -->
+        <script src="{{url_for('static', filename='pure-snow.js')}}"></script>
     </head>
 
     <body>
+        <!-- Snow effect -->
+        <div id="snow" data-count="400"></div>
+
         <!-- Page Title-->
         <!-- <div class="title"><em>/</em>{{ self.title() }}</div> -->
 
         <div id="wrapper">
-
           <a href="/"><img src="{{url_for ('static' , filename='logo_ilion.png')}}" id="logo" alt="Welcome to Ilion!"/></a>
 
           <!-- Sidebar -->
@@ -161,6 +165,10 @@
           </div>
 
         </div>
+
+        <!---------------------------------------->
+        <!-- End of content, time for SCRIPTS!! -->
+        <!---------------------------------------->
 
         <!-- Extension Flickity used for carousel -->
         <!-- https://flickity.metafizzy.co/ -->
@@ -316,6 +324,12 @@
             });
 
             $("#expandedImg").click(function() {
+              modal.show();
+              modalImg.attr("src", $(this).attr("src"));
+              captionText.text($(this).attr("alt"));
+            });
+
+            $(".ilion_map").click(function() {
               modal.show();
               modalImg.attr("src", $(this).attr("src"));
               captionText.text($(this).attr("alt"));

@@ -1,5 +1,114 @@
 <div id="main">
-    <div class="textbox">
-        <h1>Under Construction</h1>
+    <img class="facilities_about" src="{{url_for ('static' , filename='clinic_about.png')}}" alt="Clinic Header"/>
+
+    <div class="facilities_personnel">
+        <div class="about_left">
+            <img class="facilities_image" src="{{url_for ('static' , filename='clinic.png')}}" alt="Outside the Clinic">
+        </div>
+        <div class="about_right">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In metus vulputate eu scelerisque. Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida. Interdum velit euismod in pellentesque. Consequat mauris nunc congue nisi vitae suscipit. Enim nec dui nunc mattis enim ut tellus. Placerat in egestas erat imperdiet sed. Vel fringilla est ullamcorper eget. Tempus imperdiet nulla malesuada pellentesque. Bibendum at varius vel pharetra. Non odio euismod lacinia at quis risus sed vulputate odio. Velit ut tortor pretium viverra suspendisse potenti nullam ac. Mauris augue neque gravida in fermentum et sollicitudin. Lectus arcu bibendum at varius vel pharetra vel. Lectus vestibulum mattis ullamcorper velit. 
+            </p>
+        </div>
+    </div>
+
+    <div class=about_page_tabs>
+        <button class="about_page_tab" id="facilities_tab" onclick="staffDisplay('human_staff')"><em>Main</em></button>
+        <button class="about_page_tab" id="sponsorship_tab" onclick="staffDisplay('animal_staff')" style="width: 260px;"><em>Animal Assistants</em></button>
+    </div>
+
+    <div class="facilities_personnel">
+        <!-- HUMAN STAFF -->
+        <div class="clinic_staff" id="human_staff">
+            <div class="clinic_column">
+                <div class="clinic_staff_thumbnail">
+                    <img class="clinic_staff_image" src="{{url_for ('static' , filename='staff_clinic_00.png')}}">
+                    <div class="clinic_staff_nametag"><em>Musher</em></div>
+                </div>
+                <p>
+                    One two three four five six sevene eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen.
+                </p>
+            </div>
+            <div class="clinic_column">
+                <div class="clinic_staff_thumbnail">
+                    <img class="clinic_staff_image" src="{{url_for ('static' , filename='staff_clinic_01.png')}}">
+                    <div class="clinic_staff_nametag"><em>Polina</em></div>
+                </div>
+                <p>
+                    UHuhu uhwuw whuuwsuh UHuhuhuhuHHu Huhuhuhuhu uhUHUHU uHuhwui uwuhw uhUW uhw hUh WUhwuH uH uwhu.
+                </p>
+            </div>
+            <div class="clinic_column">
+                <div class="clinic_staff_thumbnail">
+                    <img class="clinic_staff_image" src="{{url_for ('static' , filename='staff_clinic_02.png')}}">
+                    <div class="clinic_staff_nametag"><em>Dei</em></div>
+                </div>
+                <p>
+                    Bu oa wj ejjek ss,s cllc.ds dsfksj ,a. .a skdjaskd ajs iiQi iu 5 yg ygw duw u unu Tyy's lkj ,s.
+                </p>
+            </div>
+            <div class="clinic_column">
+                <div class="clinic_staff_thumbnail">
+                    <img class="clinic_staff_image" src="{{url_for ('static' , filename='staff_clinic_03.png')}}">
+                    <div class="clinic_staff_nametag"><em>Honami</em></div>
+                </div>
+                <p>
+                    lksadfjl askjfd laskjkdk kjasdjdf lklasd ,s lask jflkas jkldflas. fsaklas df. kjsafj jlkas kldflas.as kljjfas.
+                </p>
+            </div>
+        </div>
+
+        <!-- ANIMAL STAFF -->
+        <div class="clinic_staff" id="animal_staff" style="display: none;">
+            <div class="clinic_column">
+                <div class="clinic_staff_thumbnail">
+                    <img class="clinic_staff_image" src="{{url_for ('static' , filename='staff_clinic_04.png')}}">
+                    <div class="clinic_staff_nametag"><em>Jacky</em></div>
+                </div>
+                <p>
+                    One two three four five six sevene eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen.
+                </p>
+            </div>
+            <div class="clinic_column">
+                <div class="clinic_staff_thumbnail">
+                    <img class="clinic_staff_image" src="{{url_for ('static' , filename='staff_clinic_05.png')}}">
+                    <div class="clinic_staff_nametag"><em>Suya</em></div>
+                </div>
+                <p>
+                    UHuhu uhwuw whuuwsuh UHuhuhuhuHHu Huhuhuhuhu uhUHUHU uHuhwui uwuhw uhUW uhw hUh WUhwuH uH uwhu.
+                </p>
+            </div>
+            <div class="clinic_column">
+                <div class="clinic_staff_thumbnail">
+                    <img class="clinic_staff_image" src="{{url_for ('static' , filename='staff_clinic_06.png')}}">
+                    <div class="clinic_staff_nametag"><em>Mimi</em></div>
+                </div>
+                <p>
+                    Bu oa wj ejjek ss,s cllc.ds dsfksj ,a. .a skdjaskd ajs iiQi iu 5 yg ygw duw u unu Tyy's lkj ,s.
+                </p>
+            </div>
+            <div class="clinic_column">
+                <div class="clinic_staff_thumbnail">
+                    <img class="clinic_staff_image" src="{{url_for ('static' , filename='staff_clinic_07.png')}}">
+                    <div class="clinic_staff_nametag"><em>Roxy</em></div>
+                </div>
+                <p>
+                    lksadfjl askjfd laskjkdk kjasdjdf lklasd ,s lask jflkas jkldflas. fsaklas df. kjsafj jlkas kldflas.as kljjfas.
+                </p>
+            </div>
+        </div>
     </div>
 </div>
+
+{% block script %}
+<script>
+    function staffDisplay(tabName) {
+            var i;
+            var x = document.getElementsByClassName("clinic_staff");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "grid";
+        }
+</script>
+{% endblock %}
