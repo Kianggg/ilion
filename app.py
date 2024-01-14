@@ -61,7 +61,13 @@ def profile(dogname):
     myDog.stats = dogInfoLines[3]
     myDog.facts = dogInfoLines[4]
     myDog.comment = dogInfoLines[5]
-    myDog.interview = dogInfoLines[6]
+
+    # Load the interview
+    dogInterview = open(ILION / f"interviews/{dogname}_interview.txt", "r", encoding="utf-8")
+    myDog.interview = dogInterview.readlines()
+    dogInterview.close()
+    # Join the string array
+    myDog.interview = '<br>'.join(myDog.interview)
 
     return render_template("profile.html", dog=myDog, isTeam = True)
 
