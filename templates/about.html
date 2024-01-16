@@ -6,9 +6,12 @@
 
     <div class="facilities_personnel">
         <div class="about_left">
-            <img class="ilion_map" src="{{url_for ('static' , filename='ilion_map.png')}}" alt="Map of Ilion">
-            <!-- Dummy for the modal -->
+            <img class="sled_dog_gif" src="{{url_for ('static' , filename='sled_dog_gif.gif')}}" alt="Sled Dogs Running">
+
+            <!-- <img class="ilion_map" src="{{url_for ('static' , filename='ilion_map.png')}}" alt="Map of Ilion">
+            Comment this out -> Dummy for the modal
             <img class="ilion_map_full" src="{{url_for ('static' , filename='ilion_map.png')}}" style="display: none;"/>
+            -->
 
             <!--
             <div id="slideshow">
@@ -23,17 +26,19 @@
             -->
         </div>
         <div class="about_right">
-            <img class="about_logo" src="{{url_for ('static' , filename='logo_ilion_blue.png')}}"/>
-            <p class="mission_statement">
-                The Ilion sanctuary is located on a 70-acre property on the edge of Diogenes, Alaska. It doubles as a veterinarian clinic and is home to the Ilion sled dog team!
-            </p>
+            <!-- <img class="about_logo" src="{{url_for ('static' , filename='logo_ilion_blue.png')}}"/> -->
+            <div class="mission_statement">
+                <p>
+                    Welcome to the Ilion sanctuary! We are the home of team Ilion, a sled team with dogs from all across the world! We maintain multiple animal care facilities, including a veterinary clinic, doggy daycare, and grooming salon. Our sanctuary is located on a 70-acre property on the edge of Diogenes, Alaska, and is open to guests all year round!  We hope you can take a few minutes to browse our website and learn all about our sanctuary, and to meet our wonderful dogs and staff!
+                </p>
+            </div>
         </div>
     </div>
 
     <div class=about_page_tabs>
-        <button class="about_page_tab" id="team_tab" onclick="changeText('about_team')"><em>Team</em></button>
-        <button class="about_page_tab" id="facilities_tab" onclick="changeText('about_facilities')"><em>Facilities</em></button>
-        <button class="about_page_tab" id="sponsorship_tab" onclick="changeText('about_sponsorship')"><em>Sponsorship</em></button>
+        <button class="about_page_tab" id="team_tab" onclick="changeText('about_team')"><em>Mission</em></button>
+        <button class="about_page_tab" id="facilities_tab" onclick="changeText('about_facilities')"><em>Health & Care</em></button>
+        <button class="about_page_tab" id="sponsorship_tab" onclick="changeText('about_sponsorship')"><em>Sponsorships</em></button>
     </div>
 
     <div class="facilities_personnel">
@@ -41,24 +46,44 @@
             <img class="about_img" src="{{url_for ('static' , filename='happy_yukola.png')}}" alt="happy_yukola"/>
         </div>
         <div class="about_right">
+            <!-- Inline styling for the font size here -->
             <div class="dogTextboxBackgroundAboutPage" id="about_team">
-                <div class="dogTextbox" id="about_page_textbox">
-                    <p>
-                        The Ilion musher made it their mission to give rescued sled dogs a place to call their own. Bringing home dogs from all over the world, the sled team was started as a way to give these dogs a chance to continue their passion in pulling. But the sanctuary isn't just home to veteran sled dogs- as many of the resident dogs have never had prior experience in pulling or racing. But that never stops them from giving it a try and falling in love with the sport; feeling a sense of fulfillment in being able to participate in a team with their newfound friends. The dogs always have a choice in whether they want to participate or not, as their well-being is top priority. As the team continues to grow, so does its popularity. The two Ilion teams (long-distance and sprint/mid-distance) have attracted fans across the globe. This has allowed the team to expand on its training itinerary. But no matter how popular Ilion gets, the musher continues to ensure the comfort and safety of the dogs.
+                <div class="dogTextbox" id="scrollingBox">
+                    <p style="font-size: 16px; margin-block-start: 0px;">
+                        The Ilion musher made it their mission to give rescued sled dogs a place to call their own. Bringing home dogs from all over the world, the sled team began as a way to give these dogs a chance to continue their passion in pulling. Of course, Ilion isn't just home to veteran sled dogs—many of the resident dogs have never had prior experience in pulling or racing. The dogs always have a choice in whether they want to participate or not, as their well-being and comfort is held as a top priority in the sanctuary. The core of the Ilion sled team is to give dogs a sense of fulfillment in being able to participate in a team with their newfound friends, and to give them a platform to come into their own. As our sled teams continue to grow, so does our popularity—our sled dogs have received adoration from fans all over the globe! This has allowed Ilion to expand on its training itinerary and overall support infrastructure. But, no matter how popular Ilion gets, the musher will always ensure that the comfort and safety of the dogs will stand above all else—to ensure that every dog in the sanctuary is loved and cared for.
+                    <!-- These exist to allow the user to scroll further down in the scroll box -->
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <!-- -->
                     </p>
                 </div>
             </div>
             <div class="dogTextboxBackgroundAboutPage" id="about_facilities" style="display: none;">
-                <div class="dogTextbox" id="about_page_textbox">
-                    <p>
-                        Text about facilities
+                <div class="dogTextbox" id="scrollingBox">
+                    <p style="font-size: 16px; margin-block-start: 0px;">
+                        The health and well-being of the Ilion dogs is critical and of the utmost priority. For dogs that participate in mushing, check-ups and vaccines are given routinely. But it doesn't just stop at the basics—every dog is unique, and Ilion's musher always makes sure that each dog is cared for with their specific needs in mind. If a dog is not feeling well, they will not participate in training or races until they are in full health; there are no exceptions to this rule. The sanctuary also houses dogs that are retired or currently under rehabilitation; unable to pull either due to choice or circumstance. An extensive rehabilitation program catered to each dog's needs was created and put into place for dogs who seek to return to racing someday. Our vet practice is staffed by passionate and dedicated veterinarians. Patient attentiveness, quick response, and providing nothing short of the most quality care for all dogs is our absolute priority. Ilion's clinic and staff are proud to be recognized and certified by the DAHO (Delphi Animal Health Organization). To read more about our staff and veterinary services, please check out our Clinic page!
+                    <!-- These exist to allow the user to scroll further down in the scroll box -->
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <!-- -->
                     </p>
                 </div>
             </div>
             <div class="dogTextboxBackgroundAboutPage" id="about_sponsorship" style="display: none;">
-                <div class="dogTextbox" id="about_page_textbox">
-                    <p>
-                        Text about sponsorship
+                <div class="dogTextbox" id="scrollingBox">
+                    <p style="font-size: 16px; margin-block-start: 0px;">
+                        Ilion is a grassroots, non-profit organization. In the past, the sanctuary was funded solely by Ilion's musher—but thanks to the growing popularity of our sled team not only within Alaska, but across the globe as well, we have been able to raise awareness for our sanctuary and our operations. As a result, we have received plenty of generous donations from our fans and local community, and have secured many wonderful sponsors. Thanks to everyone's help and much needed support, we are proud to say that our sanctuary's ever-expanding operations are able to run smoothly! If you would like to support the sanctuary via donation, please check out our <a href="javascript:;" style="color: var(--darkest-blue); text-decoration: underline;">"support us" page.</a> As a non-profit organization, every cent will go back to the dogs, our sanctuary, and the patients that are cared for at the clinic! Thank you for your consideration!
+                        <br>Ilion only accepts support from the most reputable and trusted sponsors, listed to the side! If you represent an organization that is interested in officially sponsoring us, please <a href="javascript:;" style="color: var(--darkest-blue); text-decoration: underline;">contact us here.</a">
+                    <!-- These exist to allow the user to scroll further down in the scroll box -->
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <!-- -->
                     </p>
                 </div>
             </div>
