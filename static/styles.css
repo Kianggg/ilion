@@ -32,6 +32,7 @@
     --profile-font-size: 24px;
     --scrolling-box-height: 50vh;
     --facilities-logo-size: 256px;
+    --support-margins: 400px;
 }
 
 html {
@@ -121,7 +122,7 @@ body {
     overflow-x: hidden;
     background-image: url("background_white.png");
     background-size: 50%;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
 }
 
 .title {
@@ -1289,4 +1290,22 @@ cursor: pointer;
     .modal-content {
             width: 100%;
     }
+}
+
+/* Support Page */
+
+.freebie_container {
+    margin-left: var(--content-offset);
+}
+
+.freebie_image {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 40vw;
+    transition: 0.2s;
+}
+
+.freebie_image:hover {
+    transform: scale(1.1);
 }

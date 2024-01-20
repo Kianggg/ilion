@@ -5,9 +5,12 @@
                 {% if image == 1 %}
                 <img src="{{url_for ('static' , filename='front_splash.png')}}" id="splash_art" alt="Welcome to Ilion!">
                 <figcaption id="credit"><a href="https://www.twitter.com/hamcommis" target="_blank">artist: hamra</a></figcaption>
-                {% else %}
+                {% elif image == 2 %}
                 <img src="{{url_for ('static' , filename='front_splash_2.png')}}" id="splash_art" alt="Welcome to Ilion!">
                 <figcaption id="credit"><a href="https://www.twitter.com/fptDZyIt0eHRfMd" target="_blank">artist: tareo</a></figcaption>
+                {% else %}
+                <img src="{{url_for ('static' , filename='front_splash_3.png')}}" id="splash_art" alt="Welcome to Ilion!">
+                <figcaption id="credit"><a href="https://twitter.com/mochi070823" target="_blank">artist: Lisa</a></figcaption>
                 {% endif %}
             </figure>
             <img src="{{url_for ('static' , filename='future4sleddogs.png')}}" id="future" alt="We are building a future for sled dogs!">
