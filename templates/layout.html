@@ -78,7 +78,18 @@
 
                 <li><a id="contactTab"><em>CONTACT</em></a></li>
                 <li><a id="blogTab"><em>BLOG</em></a></li>
-                <li><a id="supportTab"><em>SUPPORT US</em></a></li>
+                <li>
+                  <button class="accordion"><em>SUPPORT US</em></button>
+                  <div class="teamsPanel">
+                      <p>
+                          <ul>
+                            <li><a class="popout" id="storeTab"><em>STORE</em></a></li>
+                            <li><a class="popout" id="supportTab"><em>FREEBIES</em></a></li>
+                          </ul>
+                      </p>
+                  </div>
+                </li>
+
               </ul>
             </div>
           </div>
@@ -144,6 +155,11 @@
           <!-- SUPPORT -->
           <div class="view" id="supportView" style="display: none;">
             {% include "support.html" %}
+          </div>
+
+          <!-- SUPPORT -->
+          <div class="view" id="storeView" style="display: none;">
+            {% include "store.html" %}
           </div>
 
           <!-- DOGS PAGES: TEAM, RETIRED/KENNEL, AND PROFILE -->
@@ -278,6 +294,7 @@
             $("#salonTab").click(function() { load_view('salon') } );
             $("#contactTab").click(function() { load_view('contact') } );
             $("#supportTab").click(function() { load_view('support') } );
+            $("#storeTab").click(function() { load_view('store') } );
 
             // By default, load the landing page
             // Unless we are on the TEAMS or RETIRED or PROFILE pages

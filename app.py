@@ -28,7 +28,7 @@ for filename in os.listdir(ILION / 'dogs'):
 # LANDING PAGE
 @app.route("/")
 def index():
-    return render_template("layout.html", image = random.randint(1, 3))
+    return render_template("layout.html", image = random.randint(1, 4))
 
 # ABOUT
 @app.route("/about")
@@ -49,7 +49,7 @@ def profile(dogname):
     print("Dogname is: " + dogname)
 
     # Get information about dog
-    dogInfoFile = open(ILION / f"dogs/{dogname}.txt", "r")
+    dogInfoFile = open(ILION / f"dogs/{dogname}.txt", "r", encoding="utf-8")
     dogInfoLines = dogInfoFile.readlines()
     dogInfoFile.close()
 
