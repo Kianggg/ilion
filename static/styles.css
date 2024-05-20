@@ -1309,3 +1309,9 @@ cursor: pointer;
 .freebie_image:hover {
     transform: scale(1.1);
 }
+
+.coming_soon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

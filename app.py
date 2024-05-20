@@ -63,11 +63,14 @@ def profile(dogname):
     myDog.comment = dogInfoLines[5]
 
     # Load the interview
-    dogInterview = open(ILION / f"interviews/{dogname}_interview.txt", "r", encoding="utf-8")
-    myDog.interview = dogInterview.readlines()
-    dogInterview.close()
-    # Join the string array
-    myDog.interview = '<br>'.join(myDog.interview)
+    try:
+        dogInterview = open(ILION / f"interviews/{dogname}_interview.txt", "r", encoding="utf-8")
+        myDog.interview = dogInterview.readlines()
+        dogInterview.close()
+        # Join the string array
+        myDog.interview = '<br>'.join(myDog.interview)
+    except:
+        myDog.interview = "Interview coming soon!"
 
     return render_template("profile.html", dog=myDog, isTeam = True)
 

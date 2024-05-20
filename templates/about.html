@@ -43,7 +43,9 @@
 
     <div class="facilities_personnel">
         <div class="about_left">
-            <img class="about_img" src="{{url_for ('static' , filename='happy_yukola.png')}}" alt="happy_yukola"/>
+            <img id="about_team_img" class="about_img" src="{{url_for ('static' , filename='our_mission.png')}}" alt="our_mission"/>
+            <img id="about_facilities_img" class="about_img" src="{{url_for ('static' , filename='health_and_wellness.png')}}" style="display: none;" alt="health"/>
+            <img id="about_sponsorship_img" class="about_img" src="{{url_for ('static' , filename='happy_yukola.png')}}" style="display: none;" alt="happy_yukola"/>
         </div>
         <div class="about_right">
             <!-- Inline styling for the font size here -->
@@ -96,10 +98,15 @@
     function changeText(tabName) {
             var i;
             var x = document.getElementsByClassName("dogTextboxBackgroundAboutPage");
+            var y = document.getElementsByClassName("about_img");
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = "none";
             }
+            for (i = 0; i < y.length; i++) {
+                y[i].style.display = "none";
+            }
             document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName + "_img").style.display = "block";
         }
 </script>
 {% endblock %}
