@@ -28,7 +28,7 @@ for filename in os.listdir(ILION / 'dogs'):
 # LANDING PAGE
 @app.route("/")
 def index():
-    return render_template("layout.html", image = random.randint(1, 4))
+    return render_template("layout.html", image = random.randint(1, 6))
 
 # ABOUT
 @app.route("/about")

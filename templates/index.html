@@ -4,16 +4,22 @@
             <figure id="splash">
                 {% if image == 1 %}
                 <img src="{{url_for ('static' , filename='front_splash.png')}}" id="splash_art" alt="Welcome to Ilion!">
-                <figcaption id="credit"><a href="https://www.twitter.com/hamcommis" target="_blank">artist: hamra</a></figcaption>
+                <figcaption id="credit"><a href="https://www.x.com/hamcommis" target="_blank">artist: hamra</a></figcaption>
                 {% elif image == 2 %}
                 <img src="{{url_for ('static' , filename='front_splash_2.png')}}" id="splash_art" alt="Welcome to Ilion!">
-                <figcaption id="credit"><a href="https://www.twitter.com/fptDZyIt0eHRfMd" target="_blank">artist: tareo</a></figcaption>
+                <figcaption id="credit"><a href="https://www.x.com/fptDZyIt0eHRfMd" target="_blank">artist: tareo</a></figcaption>
                 {% elif image == 3 %}
                 <img src="{{url_for ('static' , filename='front_splash_3.png')}}" id="splash_art" alt="Welcome to Ilion!">
-                <figcaption id="credit"><a href="https://twitter.com/mochi070823" target="_blank">artist: Lisa</a></figcaption>
-                {% else %}
+                <figcaption id="credit"><a href="https://x.com/mochi070823" target="_blank">artist: Lisa</a></figcaption>
+                {% elif image == 4 %}
                 <img src="{{url_for ('static' , filename='front_splash_4.png')}}" id="splash_art" alt="Welcome to Ilion!">
-                <figcaption id="credit"><a href="https://twitter.com/cherryalpaka" target="_blank">artist: ck</a></figcaption>
+                <figcaption id="credit"><a href="https://x.com/cherryalpaka" target="_blank">artist: ck</a></figcaption>
+                {% elif image == 5 %}
+                <img src="{{url_for ('static' , filename='front_splash_5.png')}}" id="splash_art" alt="Welcome to Ilion!">
+                <figcaption id="credit"><a href="https://x.com/meatfriedsteak" target="_blank">artist: Meatfriedsteak</a></figcaption>
+                {% else %}
+                <img src="{{url_for ('static' , filename='front_splash_6.png')}}" id="splash_art" alt="Welcome to Ilion!">
+                <figcaption id="credit"><a href="https://x.com/ywyw_MNTL" target="_blank">artist: Soreyu</a></figcaption>
                 {% endif %}
             </figure>
             <!--<img src="{{url_for ('static' , filename='future4sleddogs.png')}}" id="future" alt="We are building a future for sled dogs!">-->

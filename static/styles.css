@@ -227,8 +227,11 @@ LANDING PAGE STUFF
 }
 
 #credit {
-    margin-left: auto;
-    margin-right: 0;
+    transform: rotate(270deg);
+    transform-origin: top left;
+    margin-left: -25px;
+    margin-top: -5px;
+    font-family: "Nasalization";
     color: white;
 }
 
@@ -384,7 +387,7 @@ p {
 
 a {
     text-decoration: none;
-    color: var(--offwhite);
+    color: white;
 }
 
 #fancy {
