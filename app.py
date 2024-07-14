@@ -24,6 +24,13 @@ class sledDog:
 activeDogs = []
 for filename in os.listdir(ILION / 'dogs'):
     activeDogs.append(filename.split('.')[0])
+# Exception: Halibut and Cheremsha to bottom
+activeDogs.remove("halibut")
+activeDogs.remove("cheremsha")
+activeDogs.remove("millius")
+activeDogs.append("halibut")
+activeDogs.append("cheremsha")
+activeDogs.append("millius")
 
 # LANDING PAGE
 @app.route("/")

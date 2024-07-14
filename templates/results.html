@@ -1,0 +1,16 @@
+{% block body %}
+    <div id="main">
+        <img class="resultsHeader" src="{{url_for ('static' , filename='results_header.png')}}" alt="Trophy"/>
+        <p class="raceResults">
+            <strong>Next race: training season in session</strong><br><br>
+            1946 - Jake Butler<br>
+            1947 - Earl Norris<br>
+            1948 - Earl Norris<br>
+            1949 - Jake Butler<br>
+            1950 - Gareth Wright<br>
+            1951 - Raymond Paul<br>
+        </p>
+        <img class="resultsFrame" src="{{url_for ('static' , filename='race_results_frame.png')}}" alt="Textbox frame"/>
+        <img class="resultsFooter" src="{{url_for ('static' , filename='results_footer.png')}}" alt="Racing"/>
+    </div>
+{% endblock %}

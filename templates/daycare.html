@@ -3,7 +3,10 @@
 
     <div class="facilities_personnel">
         <div class="about_left">
-            <img class="facilities_image" src="{{url_for ('static' , filename='daycare.png')}}">
+            <div id="daycare_slideshow">
+                <a><img src="{{url_for ('static' , filename='daycare_ext.png')}}"></a>
+                <a><img src="{{url_for ('static' , filename='daycare_int.png')}}"></a>
+            </div>
         </div>
         <div class="about_right">
             <p>
@@ -12,12 +15,11 @@
         </div>
     </div>
 
-    <div class="facilities_personnel">
+    <div class="facilities_personnel_skinny">
         <div class="staffAbout">
             <p>
-                <strong>Nanny ~ Dog Caretaker</strong><br>
-                &emsp;There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
-            </p>
+                <strong>Breed:</strong> Anatolian Shepherd<br><br>
+                &emsp;&emsp;Meryem used to be a herding dog in Rize, Turkey, and would help her owner shepherd sheep and goats. Having been trained exceptionally well, she had a second sense and was able to find any of the livestock with just her nose; she was especially protective of the lambs and kid goats. However, a few years ago, she injured her leg on the job. She wasn’t able to work as well as she used to. As a result, her owner had to retire her, adopting a new herding dog to take her place. Meryem’s injury has completely healed now, but her veterinarian recommended against letting her herd again, as she can’t overexert herself lest she possibly reinjure her leg to the point where it becomes irreparable.<br>&emsp;&emsp;Although her new retired life at that point was cushiony and stress-free, she was yearning to feel depended on again, having been a shepherd dog all her life up until that point. Her owner saw how depressed she had become, and sought out the Ilion musher for their assistance– and just their luck! The Sanctuary, wanting to give back to the town of Diogenes, was in the process of starting a daycare program for the town and its residents. It was the perfect fit for Meryem!</p>
         </div>
         <div class="staffPic">
             <img class="staffThumb" src="{{url_for ('static' , filename='staff_daycare_00.png')}}" alt="Nanny ~ Dog Caretaker"/>

@@ -14,16 +14,16 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
         <!-- Flickity for carousels -->
         <link rel="stylesheet" href="/static/flickity.css" media="screen">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Site Title -->
         <title>{% block title %}{% endblock %}</title>
-        <meta name="viewport" content="width=1024">
         <!-- Snow time -->
         <script src="{{url_for('static', filename='pure-snow.js')}}"></script>
     </head>
 
     <body>
-        <!-- Snow effect -->
-        <div id="snow" data-count="400"></div>
+        <!-- Varsion No. -->
+        <div id="version_number">VERSION 1.0</div>
 
         <!-- Page Title-->
         <!-- <div class="title"><em>/</em>{{ self.title() }}</div> -->
@@ -35,32 +35,21 @@
           <div id="sidebarSpacing">
             <div id="mainSidebar" class="sidebar">
               <ul>
-                <li>
-                  <button class="accordion"><em>ABOUT</em></button>
-                  <div class="teamsPanel">
-                      <p>
-                          <ul>
-                          <li><a class="popout" id="aboutTab"><em>ABOUT US</em></a></li>
-                          <li><a class="popout" id="musherTab"><em>ILION'S MUSHER</em></a></li>
-                          </ul>
-                      </p>
-                  </div>
-                </li>
+                <li><a id="aboutTab"><em>ABOUT</em></a></li>
 
-                <li><a id="teamTab" href="/team"><em>DOGS</em></a></li>
-
-                <!-- Very jank offset so that it matches the other buttons
+                <!-- Very jank offset so that it matches the other buttons -->
                 <li>
-                <button class="accordion"><em>DOGS</em></button>
+                <button class="accordion"><em>TEAM</em></button>
                 <div class="teamsPanel">
                   <p>
                     <ul>
-                      <li><a class="popout" href="/team" id="staffTab"><em>TEAM ILION</em></a></li>
-                      <li><a class="popout" href="/retired" id="retiredTab"><em>KENNEL</em></a></li>
+                      <li><a class="popout" href="/team" id="staffTab"><em>DOGS</em></a></li>
+                      <li><a class="popout" id="musherTab"><em>MUSHER</em></a></li>
+                      <li><a class="popout" id="resultsTab"><em>RESULTS</em></a></li>
                     </ul>
                   </p>
                 </div>
-                </li> -->
+                </li> 
 
                 <li>
                   <button class="accordion"><em>FACILITIES</em></button>
@@ -76,20 +65,33 @@
                   </div>
                 </li>
 
-                <li><a id="contactTab"><em>CONTACT</em></a></li>
                 <li><a id="blogTab"><em>BLOG</em></a></li>
                 <li>
                   <button class="accordion"><em>SUPPORT US</em></button>
                   <div class="teamsPanel">
                       <p>
                           <ul>
-                            <li><a class="popout" id="storeTab"><em>STORE</em></a></li>
+                            <li><a class="popout" id="storeTab"><em>STORE (Coming Soon)</em></a></li>
                             <li><a class="popout" id="supportTab"><em>FREEBIES</em></a></li>
+                            <li><a class="popout"><em>TOURS (Coming Soon)</em></a></li>
                           </ul>
                       </p>
                   </div>
                 </li>
 
+                <li>
+                  <button class="accordion"><em>CONTACT</em></button>
+                  <div class="teamsPanel">
+                      <p>
+                          <ul>
+                            <li><a class="popout"><em>FAQ</em></a></li>
+                            <li><a class="popout"><em>RECRUIT (Coming soon)</em></a></li>
+                          </ul>
+                      </p>
+                  </div>
+                </li>
+                
+                <li><img src="{{url_for ('static' , filename='ichi_banner.gif')}}" alt="Banner by Ichigo" style="margin-left: 30px;"/></li>
               </ul>
             </div>
           </div>
@@ -106,6 +108,11 @@
           <!-- MUSHER -->
           <div class="view" id="musherView" style="display: none;">
             {% include "musher.html" %}
+          </div>
+
+          <!-- RESULTS -->
+          <div class="view" id="resultsView" style="display: none;">
+            {% include "results.html" %}
           </div>
 
           <!-- BLOG -->
@@ -157,7 +164,7 @@
             {% include "support.html" %}
           </div>
 
-          <!-- SUPPORT -->
+          <!-- STORE -->
           <div class="view" id="storeView" style="display: none;">
             {% include "store.html" %}
           </div>
@@ -169,6 +176,9 @@
               {% endblock %}
             </div>
           {% endif %}
+
+          <!-- Snow effect -->
+          <div id="snow" data-count="400"></div>
 
           <!-- Modal that I got from W3 Schools -->
           <div id="myModal" class="modal">
@@ -207,7 +217,7 @@
             }, false);
 
             window.addEventListener("DOMContentLoaded", function(e) {
-              var stage = document.getElementById("cafe_slideshow");
+              var stage = document.getElementById("daycare_slideshow");
               var fadeComplete = function(e) { stage.appendChild(arr[0]); };
               var arr = stage.getElementsByTagName("a");
               for(var i=0; i < arr.length; i++) {
@@ -285,9 +295,10 @@
 
             // Set up the tabs to load the correct views
             $("#aboutTab").click(function() { load_view('about') } );
-            $("#musherTab").click(function() { load_view('musher') } );
             $("#blogTab").click(function() { load_view('blog') } );
             //$("#cafeTab").click(function() { load_view('cafe') } );
+            $("#musherTab").click(function() { load_view('musher') } );
+            $("#resultsTab").click(function() { load_view('results') } );
             $("#clinicTab").click(function() { load_view('clinic') } );
             $("#daycareTab").click(function() { load_view('daycare') } );
             $("#indexTab").click(function() { load_view('index') } );
@@ -335,6 +346,12 @@
             var captionText = $("#caption");
 
             $(".staffThumb").click(function() {
+              modal.show();
+              modalImg.attr("src", $(this).next().attr("src"));
+              captionText.text($(this).attr("alt"));
+            });
+
+            $(".cafe_staff_image").click(function() {
               modal.show();
               modalImg.attr("src", $(this).next().attr("src"));
               captionText.text($(this).attr("alt"));

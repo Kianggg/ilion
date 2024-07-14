@@ -29,6 +29,11 @@
     --staff-profile-pic-width: 206px;
     --staff-profile-pic-height: 234px;
 
+    /* This is the amount of margin added to both sides of "facilities_personnel_skinny" to achieve a narrower effect on the daycre and salon pages (as opposed to the cafe and clinic pages) */
+    --skinny-facilities-offset: 120px;
+
+    --slideshow-height: 400px;
+    --slideshow-width: 600px;
     --profile-font-size: 24px;
     --scrolling-box-height: 50vh;
     --facilities-logo-size: 256px;
@@ -52,6 +57,17 @@ body {
     background-size: 100% auto;
     background-position: left bottom;
     background-repeat: repeat-x;
+}
+
+/* Version number */
+#version_number {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+
+    font-size: x-small;
+    font-family: 'Rexlia';
+    color: var(--offwhite);
 }
 
 /* Snow configuration */
@@ -207,6 +223,8 @@ LANDING PAGE STUFF
     height: 90vh;
 
     border-radius: 10px;
+
+    cursor: default;
 }
 
 /* "We are building a future for sled dogs!" banner */
@@ -386,8 +404,9 @@ p {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important; 
     color: white;
+    
 }
 
 #fancy {
@@ -436,9 +455,10 @@ ul {
 /* Thanks again to W3Schools for teaching me CSS */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--team-grid-cell-width), 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(var(--team-grid-cell-width), 1fr)); */
+    grid-template-columns: var(--team-grid-cell-width) var(--team-grid-cell-width) var(--team-grid-cell-width);
     grid-auto-rows: 0.2fr;
-    gap: 20px 35px;
+    gap: 20px 25px;
 
     margin-top: 125px;
     margin-left: 368px;
@@ -613,6 +633,7 @@ ul {
     background-image: url("profile_bg.png");
     background-size: 100%;
     float: left;
+    width: 50%;
     /* border: 7px solid red; */
 }
 
@@ -846,6 +867,13 @@ ul {
     display: flex;
 }
 
+/* Narrower variant for daycare and salon */
+.facilities_personnel_skinny {
+    margin-left: calc(var(--content-offset) + var(--skinny-facilities-offset));
+    margin-right: var(--skinny-facilities-offset);
+    display: flex;
+}
+
 /* Left column */
 .staffAbout {
     float: left;
@@ -890,7 +918,7 @@ ul {
 /* Copied but the for the about page */
 .about_right {
     float: left;
-    padding: 10px;
+    padding: 40px;
     width: 70%;
 }
 
@@ -937,21 +965,16 @@ ul {
     width: 700px;
 }
 
-#cafe_slideshow {
-    height: 250px;
-    width: 450px;
-}
-
-#salon_slideshow {
-    height: 300px;
-    width: 450px;
+#daycare_slideshow {
+    height: var(--slideshow-height);
+    width: var(--slideshow-width);
 }
 
 #slideshow a {
     position: absolute;
 }
 
-#cafe_slideshow a {
+#daycare_slideshow a {
     position: absolute;
 }
 
@@ -965,10 +988,10 @@ ul {
     width: 700px;
 }
 
-#cafe_slideshow a img {
+#daycare_slideshow a img {
     padding: 10px;
-    height: 250px;
-    width: 450px;
+    height: var(--slideshow-height);
+    width: var(--slideshow-width);
 }
 
 #salon_slideshow a img {
@@ -992,18 +1015,18 @@ ul {
     display: none;
 }
 
-#cafe_slideshow a:nth-of-type(1) {
+#daycare_slideshow a:nth-of-type(1) {
     animation-name: fader;
     animation-delay: 4s;
     animation-duration: 1s;
     z-index: 20;
 }
 
-#cafe_slideshow a:nth-of-type(2) {
+#daycare_slideshow a:nth-of-type(2) {
     z-index: 10;
 }
 
-#cafe_slideshow a:nth-of-type(n+3) {
+#daycare_slideshow a:nth-of-type(n+3) {
     display: none;
 }
 
@@ -1044,6 +1067,10 @@ ul {
 
 .clinic_column {
     text-align: center;
+}
+
+.clinic_column p {
+    margin-top: 30px;
 }
 
 .clinic_staff_thumbnail {
@@ -1092,13 +1119,12 @@ ul {
 }
 
 .mission_statement {
-    padding-left: 20px;
-    line-height: 420px;
     height: 200px;
     text-align: center;
 }
 
 .mission_statement p {
+    font-family: 'Rexlia';
     color: var(--darkest-blue);
     line-height: 1.5;
     display: inline-block;
@@ -1135,6 +1161,48 @@ ul {
     margin-right: 20px;
 }
 
+/* Special variant of .clinic_stff but for the cafe, because originally the cafe had
+/* a different layout, but then roby decided that the cafe should use the clinic columns
+/* to display its staff, so I've learned my lesson about naming anything specific to the
+/* page it appears on and from now on I'll just name things like "two_columns" and "unequal_columns"
+/* and stuff like that */
+
+.clinic_staff {
+    width: var(--content-width);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--staff-profile-pic-width), 1fr));
+    grid-gap: 10px;
+    padding: 10px;
+
+    /* Makes room for the tabs */
+    margin-top: 40px;
+}
+
+.cafe_staff {
+    width: var(--content-width);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--staff-profile-pic-width), 1fr));
+    grid-gap: 60px;
+    padding: 25px;
+
+    margin-top: 15px;
+}
+
+.cafe_staff p {
+    text-align: left;
+}
+
+.cafe_staff_image {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 100%;
+}
+
 /* --------------------------------------------------------------------- */
 /* The is for the blog. Lord so help me if there are any more variations */
 /* --------------------------------------------------------------------- */
@@ -1158,7 +1226,9 @@ ul {
 }
 
 .blog_textbox p {
-    font-size: small;
+    text-align: left;
+    font-size: medium;
+    font-family: "Rexlia";
 }
 
 #blog_title {
@@ -1317,4 +1387,47 @@ cursor: pointer;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Results Page */
+
+.resultsHeader {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.resultsFrame {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 794px;
+}
+
+.raceResults {
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+.resultsFooter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Musher Page */
+
+#musherView {
+    width: 0% !important;
+}
+
+#musherImg {
+    object-fit: contain;
+    max-width: 462px;
+    border-radius: 10px;
+    height: 60vh;
 }
