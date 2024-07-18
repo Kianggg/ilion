@@ -57,11 +57,19 @@
 
     <div id="info">
 
-        <div id="aboutTabs">
-            <button class="tab" id="interview_tab" onclick="openTab('interview')"></button>
-            <button class="tab" id="facts_tab" onclick="openTab('stats')"></button>
-            <button class="tab" id="about_tab" onclick="openTab('data')"></button>
-        </div>
+        {% if (dog.name == "Millius") or (dog.name == "Cheremsha") or (dog.name == "Halibut") %}
+            <div id="aboutTabs">
+                <button class="tab" style="display: none;" id="interview_tab" onclick="openTab('interview')"></button>
+                <button class="tab" style="display: none;" id="facts_tab" onclick="openTab('stats')"></button>
+                <button class="tab" style="display: none;" id="about_tab" onclick="openTab('data')"></button>
+            </div>
+        {% else %}
+            <div id="aboutTabs">
+                <button class="tab" id="interview_tab" onclick="openTab('interview')"></button>
+                <button class="tab" id="facts_tab" onclick="openTab('stats')"></button>
+                <button class="tab" id="about_tab" onclick="openTab('data')"></button>
+            </div>
+        {% endif %}
 
         <div class="toggleInfo" id="data" style="display:block">
             <div class="dogTextboxBackground">
@@ -138,5 +146,20 @@
             }
             document.getElementById(tabName).style.display = "block";
         }
+</script>
+
+<!-- Javascript for centering the main gallery image -->
+<!-- Next time we really gotta standardize image submission dimensions... -->
+<script>
+$(document).ready(function () {
+              $('.carousel').flickity({
+                  wrapAround: true,
+                  freeScroll: true,
+                  imagesLoaded: true,
+                  prevNextButtons: false,
+                  pageDots: false,
+                  lazyLoad: 3
+              });
+          });
 </script>
 {% endblock %}

@@ -405,8 +405,7 @@ p {
 
 a {
     text-decoration: none !important; 
-    color: white;
-    
+    color: white !important;
 }
 
 #fancy {
@@ -1411,6 +1410,16 @@ cursor: pointer;
     left: 0;
     right: 0;
     position: absolute;
+}
+
+.raceYear {
+    font-family: "Rexlia";
+}
+
+.raceList {
+    text-align: left;
+    margin-left: calc(var(--content-width) / 2.2);
+    font-size: 18px;
 }
 
 .resultsFooter {

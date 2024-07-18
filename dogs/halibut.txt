@@ -1,6 +1,6 @@
 Halibut
-NAME: Halibut<br>BREED: Siberian Husky<br>FROM: Whittier, Alaska<br>POSITION: Team/Wheel<br>TEAM: Long-distance<br>ARTIST: <a href="https://twitter.com/lapithai">Roby</a><br>
-&emsp;&emsp;Halibut is a seasonal sled dog that races in Ilion’s long-distance team during half of the winter season. For the remainder of the year, she resides in Whittier at the Begich towers, accompanying her owner and the fishermen by the docks. Ilion’s musher is good friends with her owner and saw her potential as a sled dog during a casual visit. While her owner was ecstatic to hear this, he was still too attached to her and so special arrangements were made for her.
+NAME: Halibut (<b>Seasonal</b>)<br>BREED: Siberian Husky<br>FROM: Whittier, Alaska<br>POSITION: Team/Wheel<br>TEAM: Sprint<br>ARTIST: <a href="https://twitter.com/lapithai">Roby</a><br>
+&emsp;&emsp;Halibut is a seasonal sled dog that only participates in Ilion’s sprint team during half of the winter season. For the remainder of the year, she resides in Whittier at the Begich towers, accompanying her owner and the fishermen by the docks. Ilion’s musher is good friends with her owner and saw her potential as a sled dog during a casual visit. While her owner was ecstatic to hear this, he was still too attached to her and so special arrangements were made for her.
 STRENGTH: ■□□□□<br>ENDURANCE: ■■■□□<br>SPEED: ■■■■■<br>DETERMINATION: ■■■■□<br>
 &#x1F43E Seasonal dog
 &emsp;&emsp;No musher comment
