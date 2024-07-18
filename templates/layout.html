@@ -23,7 +23,10 @@
 
     <body>
         <!-- Varsion No. -->
-        <div id="version_number">VERSION 1.0</div>
+        <div id="version_number">
+          VERSION 1.0
+          <img id="credits_dog" onclick="load_view('contact')" src="{{url_for ('static' , filename='version_gif.gif')}}" alt="Sled dog running gif"/>
+        </div>
 
         <!-- Page Title-->
         <!-- <div class="title"><em>/</em>{{ self.title() }}</div> -->
@@ -71,9 +74,8 @@
                   <div class="teamsPanel">
                       <p>
                           <ul>
-                            <li><a class="popout" id="storeTab"><em>STORE (Coming Soon)</em></a></li>
                             <li><a class="popout" id="supportTab"><em>FREEBIES</em></a></li>
-                            <li><a class="popout"><em>TOURS (Coming Soon)</em></a></li>
+                            <li><a class="popout" id="storeTab"><em>STORE</em></a></li>
                           </ul>
                       </p>
                   </div>
@@ -84,8 +86,8 @@
                   <div class="teamsPanel">
                       <p>
                           <ul>
-                            <li><a class="popout"><em>FAQ</em></a></li>
-                            <li><a class="popout"><em>RECRUIT (Coming soon)</em></a></li>
+                            <li><a class="popout" id="faqTab"><em>FAQ</em></a></li>
+                            <li><a class="popout" id="recruitTab"><em>RECRUIT</em></a></li>
                           </ul>
                       </p>
                   </div>
@@ -177,9 +179,6 @@
             </div>
           {% endif %}
 
-          <!-- Snow effect -->
-          <div id="snow" data-count="400"></div>
-
           <!-- Modal that I got from W3 Schools -->
           <div id="myModal" class="modal">
               <!-- The Close Button -->
@@ -189,8 +188,10 @@
               <!-- Modal Caption (Image Text) -->
               <div id="caption"></div>
           </div>
-
         </div>
+
+        <!-- Snow effect -->
+        <div id="snow" data-count="400"></div>
 
         <!---------------------------------------->
         <!-- End of content, time for SCRIPTS!! -->
@@ -306,6 +307,8 @@
             $("#contactTab").click(function() { load_view('contact') } );
             $("#supportTab").click(function() { load_view('support') } );
             $("#storeTab").click(function() { load_view('store') } );
+            $("#faqTab").click(function() { load_view('store') } );
+            $("#recruitTab").click(function() { load_view('store') } );
 
             // By default, load the landing page
             // Unless we are on the TEAMS or RETIRED or PROFILE pages

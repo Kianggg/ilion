@@ -3,9 +3,7 @@
 
     <!-- Image Gallery -->
 
-    <div id="dog_name">
-        <em style="font-size: 64px;">MUSHER</em>
-    </div>
+    <div id="dog_name">MUSHER</div>
 
     <div id="gallery" style="height: 100vh">
         
@@ -26,11 +24,11 @@
     <div id="info">
 
         <div id="aboutTabs">
-            <button class="tab" id="interview_tab" onclick="openTab('musher_interview')"></button>
-            <button class="tab" id="about_tab" onclick="openTab('musher_data')"></button>
+            <button class="tab" id="interview_tab" onclick="musherOpenTab('musher_interview')"></button>
+            <button class="tab" id="about_tab" onclick="musherOpenTab('musher_data')"></button>
         </div>
 
-        <div class="toggleInfo" id="musher_data" style="display: block;">
+        <div class="musherToggleInfo" id="musher_data" style="display: block;">
             <div class="dogTextboxBackground">
                 <div class="dogTextbox">
                     <p>NAME: Hector<br>Hometown: Kotzebue, Alaska<br>Occupation: Musher & Veterinarian<br>ARTIST: <a href="https://x.com/lapithai">Roby</a><br></p>
@@ -45,12 +43,12 @@
             </div>
         </div>
 
-        <div class="toggleInfo" id="musher_interview" style="display:none">
+        <div class="musherToggleInfo" id="musher_interview" style="display:none">
             <div class="dogTextboxBackground">
                 <!-- Inline styling to make the interview box larger -->
                 <div class="dogTextbox" id="scrollingBox" style="max-height: 60vh; padding-bottom: 100px;">
                     <h1>Interview</h1>
-                    <p>N/A</p>
+                    <p>Coming soon!</p>
                 </div>
             </div>
         </div>
@@ -61,9 +59,9 @@
 {% block script %}
 <!-- Javascript for the tabs that control the info panels, I ALSO got this from W3Schools -->
 <script>
-    function openTab(tabName) {
+    function musherOpenTab(tabName) {
             var i;
-            var x = document.getElementsByClassName("toggleInfo");
+            var x = document.getElementsByClassName("musherToggleInfo");
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = "none";
             }

@@ -8,7 +8,7 @@
     <div id="main">
         <img class="facilities_about" src="{{url_for ('static' , filename='cafe_about.png')}}" alt="Cafe"/>
 
-        <div class="facilities_personnel">
+        <div class="facilities_blurb">
             <div class="about_left">
                 <img class="facilities_image" src="{{url_for ('static' , filename='cafe.png')}}">
                 <!--
@@ -22,7 +22,7 @@
             </div>
             <div class="about_right">
                 <p>
-                    Are you a big fan of coffee and sweets? Being a fairly new addition to the sanctuary, our cafe has already captured the hearts of both our guests and our dogs! With an ever-changing and trendy menu, using only fresh ingredients supplied locally by the wonderful residents of Diogenes, all of our pastries and coffee are made fresh in house with plenty of love~ Here, you'll also find Ilion merchandise, all of which goes directly to supporting the sanctuary and our team! With how often our sled dogs come here to relax, there might be a chance you meet one of your favorite team members here as well!
+                    &emsp;&emsp;Are you a big fan of coffee and sweets? Being a fairly new addition to the sanctuary, our cafe has already captured the hearts of both our guests and our dogs!<br>&emsp;&emsp;With an ever-changing and trendy menu, using only fresh ingredients supplied locally by the wonderful residents of Diogenes, all of our pastries and coffee are made fresh in house with plenty of love~ Here, you'll also find Ilion merchandise, all of which goes directly to supporting the sanctuary and our team! With how often our sled dogs come here to relax, there might be a chance you meet one of your favorite team members here as well!
                 </p>
             </div>
         </div>
@@ -53,10 +53,13 @@
                         <!-- This second img is a dummy used by the modal to open a different img than the one that was clicked -->
                         <img id="staffFull" src="{{url_for ('static' , filename='dorothy_full.png')}}" style="display: none;"/>
                     </div>
-                    <p>
-                        <strong>Dorothy</strong><br><br>
-                        &emsp;&emsp;Our very own Bubbly Barista, Dorothy! With a keen eye for trendy fashions, and having adopted a very… particular friendly manner, she definitely stands out in the town of Diogenes and the Alaskan wilderness. Born in Vancouver, British Columbia, she was initially an aspiring chef, dreaming of owning her own restaurant in the heart of the city. However, many life challenges changed her perspective and goals.<br>&emsp;&emsp;After she set off to Diogenes to visit her grandparents, she found herself revisiting the small town afterwards and came to the realization that this was the change that she needed. When word came of a Cafe opening up at the Ilion Sanctuary, Dorothy decided to take the chance—and now, she puts on a smiling face, giving everyone smiling faces, and wants nothing more than to share warmth with all of the cafe's patrons. While the Cafe is well equipped, Dorothy prefers an old press maker– she brags smugly about how it was passed down from generations and gives coffee the richest taste! 
-                    </p>
+                    <div class="scrolling_staff_bio">
+                        <p>
+                            <strong>Dorothy</strong><br><br>
+                            &emsp;&emsp;Our very own Bubbly Barista, Dorothy! With a keen eye for trendy fashions, and having adopted a very… particular friendly manner, she definitely stands out in the town of Diogenes and the Alaskan wilderness. Born in Vancouver, British Columbia, she was initially an aspiring chef, dreaming of owning her own restaurant in the heart of the city. However, many life challenges changed her perspective and goals.<br>&emsp;&emsp;After she set off to Diogenes to visit her grandparents, she found herself revisiting the small town afterwards and came to the realization that this was the change that she needed. When word came of a Cafe opening up at the Ilion Sanctuary, Dorothy decided to take the chance—and now, she puts on a smiling face, giving everyone smiling faces, and wants nothing more than to share warmth with all of the cafe's patrons. While the Cafe is well equipped, Dorothy prefers an old press maker– she brags smugly about how it was passed down from generations and gives coffee the richest taste! 
+                            <br><br><br>
+                        </p>
+                    </div>
                 </div>
                 <div class="clinic_column">
                     <div class="clinic_staff_thumbnail">
@@ -64,11 +67,14 @@
                         <!-- This second img is a dummy used by the modal to open a different img than the one that was clicked -->
                         <img id="staffFull" src="{{url_for ('static' , filename='sparky_full.png')}}" style="display: none;"/>
                     </div>
-                    <p>
-                        <strong>Sparky</strong><br>
-                        <strong>Breed:</strong> Pumi dog<br><br>
-                        &emsp;&emsp;Sparky used to work at a small locally-owned cafe in the capital of Alaska, Juneau. She grew up there from an early age, so she has a very good sense of smell for coffee! Though she enjoyed her life at the cafe, spending her time making all types of delicious blends and dishes, she happened to one day see Ilion's activities on the TV. She heard mention of the idea of the Sanctuary starting a cafe on site, and felt it calling out to her!<br>&emsp;&emsp;It was a big decision, but with the help of her old owner, she made the move to Diogenes to help Ilion start their cafe. Thankfully, it wasn't a wistful farewell, as Sparky still stays in touch with her old owner and home– she has helped the two businesses collaborate on many shared ideas, so that southeast Alaska can enjoy Ilion's coffee, and vice versa! 
-                    </p>
+                    <div class="scrolling_staff_bio">
+                        <p>
+                            <strong>Sparky</strong><br>
+                            <strong>Breed:</strong> Pumi dog<br><br>
+                            &emsp;&emsp;Sparky used to work at a small locally-owned cafe in the capital of Alaska, Juneau. She grew up there from an early age, so she has a very good sense of smell for coffee! Though she enjoyed her life at the cafe, spending her time making all types of delicious blends and dishes, she happened to one day see Ilion's activities on the TV. She heard mention of the idea of the Sanctuary starting a cafe on site, and felt it calling out to her!<br>&emsp;&emsp;It was a big decision, but with the help of her old owner, she made the move to Diogenes to help Ilion start their cafe. Thankfully, it wasn't a wistful farewell, as Sparky still stays in touch with her old owner and home– she has helped the two businesses collaborate on many shared ideas, so that southeast Alaska can enjoy Ilion's coffee, and vice versa! 
+                            <br><br><br>
+                        </p>
+                    </div>
                 </div>
                 <div class="clinic_column">
                     <div class="clinic_staff_thumbnail">
@@ -76,11 +82,14 @@
                         <!-- This second img is a dummy used by the modal to open a different img than the one that was clicked -->
                         <img id="staffFull" src="{{url_for ('static' , filename='sparky_full.png')}}" style="display: none;"/>
                     </div>
-                    <p>
-                        <strong>Eleky</strong><br>
-                        <strong>Species:</strong> Chinchilla<br><br>
-                        &emsp;&emsp;Minty, the previous musher of our sled dog Sammy, is a chinchilla enthusiast—one day she came to visit the sanctuary and brought along Eleky, a small grey Chinchilla with a pair of interesting yellow ears. Sparky saw that Sammy, Yukola, and some of the other dogs were playing around with the small rodent and so she approached them with interest. Eleky was used to dogs and was very comfortable around them, and this inspired Sparky to try to make a cafe item inspired by and made specifically for Chinchillas.<br>&emsp;&emsp;Sparky was a very clumsy chef, however, and this got on Eleky's nerves. To rectify this, the Chinchilla sat on Sparky's head and served as her guide to whip her into tip-top chef shape. When it was time for Minty to go back home, Sparky didn't want to let Eleky go, and reluctantly said her goodbyes. But when Eleky arrived back in Siberia, he couldn't stop thinking about his time with Sparky and asked Minty for permission to live with everyone at Ilion. The two were reunited, and the two of them together make impressive drinks and dishes for everyone who visits!
-                    </p>
+                    <div class="scrolling_staff_bio">
+                        <p>
+                            <strong>Eleky</strong><br>
+                            <strong>Species:</strong> Chinchilla<br><br>
+                            &emsp;&emsp;Minty, the previous musher of our sled dog Sammy, is a chinchilla enthusiast—one day she came to visit the sanctuary and brought along Eleky, a small grey Chinchilla with a pair of interesting yellow ears. Sparky saw that Sammy, Yukola, and some of the other dogs were playing around with the small rodent and so she approached them with interest. Eleky was used to dogs and was very comfortable around them, and this inspired Sparky to try to make a cafe item inspired by and made specifically for Chinchillas.<br>&emsp;&emsp;Sparky was a very clumsy chef, however, and this got on Eleky's nerves. To rectify this, the Chinchilla sat on Sparky's head and served as her guide to whip her into tip-top chef shape. When it was time for Minty to go back home, Sparky didn't want to let Eleky go, and reluctantly said her goodbyes. But when Eleky arrived back in Siberia, he couldn't stop thinking about his time with Sparky and asked Minty for permission to live with everyone at Ilion. The two were reunited, and the two of them together make impressive drinks and dishes for everyone who visits!
+                            <br><br><br>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

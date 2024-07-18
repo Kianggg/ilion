@@ -16,9 +16,9 @@
 
     <div id="dog_name">
         {% if dog.name == "Little_Kikky" %}
-            <em style="font-size: 64px;">LITTLE KIKKY</em>
+            LITTLE KIKKY
         {% else %}
-            <em>{{dog.name|upper}}</em>
+            {{dog.name|upper}}
         {% endif %}
     </div>
 
@@ -123,6 +123,20 @@
 {% endblock %}
 
 {% block script %}
+<!-- Javascript for centering the main gallery image -->
+<!-- Next time we really gotta standardize image submission dimensions... -->
+<script>
+    function centerGallery() {
+        var galleryImageSize = $('#expandedImg').width();
+        // This is hardcoded in the css for Desktop view
+        var galleryMaxWidth = 462;
+        if (galleryMaxWidth > galleryImageSize) {
+            var emptySpace = galleryMaxWidth - galleryImageSize;
+            $('#expandedImg').css("margin-left", (emptySpace / 2));
+        }
+    };
+</script>
+
 <script>
     function myFunction(imgs) {
         // Get the expanded image
@@ -133,6 +147,8 @@
         expandImg.src = imgs.src;
         // Use the value of the alt attribute of the clickable image as text inside the expanded image
         imgText.innerHTML = imgs.alt;
+        // Make sure new image is centered
+        centerGallery();
     }
 </script>
 
@@ -151,15 +167,8 @@
 <!-- Javascript for centering the main gallery image -->
 <!-- Next time we really gotta standardize image submission dimensions... -->
 <script>
-$(document).ready(function () {
-              $('.carousel').flickity({
-                  wrapAround: true,
-                  freeScroll: true,
-                  imagesLoaded: true,
-                  prevNextButtons: false,
-                  pageDots: false,
-                  lazyLoad: 3
-              });
-          });
+    $(window).on("load", function() {
+        centerGallery();
+    });
 </script>
 {% endblock %}

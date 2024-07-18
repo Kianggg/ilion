@@ -1,0 +1,75 @@
+Ilion changelog
+
+==========
+-- 7/18 --
+==========
+
+INDEX
+X Soreyu's splash art, move to the left
+X Artist credit font-size 22px and italics
+X Try it with blue outline
+X Color: 2c72f1
+X Scrolling ticker text replace w/ actual content
+X Welcome to the Ilion Sanctuary! Training season is now in session! Interviews are complete~
+
+ABOUT
+X Change link color to bright blue/minty blue/cyan
+X .ilion_map content_width / 1.6
+X Add Ilion Team logo to the About page instead of "Welcome to the Ilion Sanctuary!"
+X "We are home of the team..." Make bigger but not go past bottom of map
+
+DOGS & PROFILE
+X Fix Millius' everything
+X Center dog images in gallery frame
+~ Move dog info text boxes to the right
+X Interview font 22px
+X When you go to the musher page straight from dog's profile, boxes are hidden
+Dog name text, make it slightly smaller
+X Millius and Halibut remove facts and interview tab
+? Brandy new images
+
+MUSHER
+X Pretend the white bg issue isn't happening
+
+RESULTS
+X Results footer make width 50%
+X Add "dog_name"
+
+FACILITIES ALL
+X Neaten up and left-align text areas
+X White scrolling box
+
+CLINIC
+X Fit about text to dimensions of container/image
+X Replace clinic header
+
+CAFE
+~ Make banner image slightly smaller
+
+DAYCARE
+X Thumbnail bigger
+
+SALON
+X Thumbnail bigger
+
+BLOG
+X Switch back to Droid Sans font
+X Bold the link to results
+X Small space between image and title
+X Less space after results link
+
+COMING SOON
+X Big outlined text centered on page
+X Remove Milius
+X Remove (Coming soon from tab)
+X Replace Tours with Store
+
+FREEBIES
+X Move it all down
+
+X Version number, make it a little bit bigger
+X Add version gif
+
+==========
+==========
+==========

@@ -1,6 +1,7 @@
 :root {
-    --ilion-blue: #004DFF;
+    --original-blue: #004DFF;
     --light-blue: #67a1ff;
+    --ilion-blue: #2c72f1;
     --dark-blue: #1105b4;
     --darkest-blue: #080442;;
     --gridlines: #f0f0f5;
@@ -28,6 +29,9 @@
     /* Full size is 412x468 */
     --staff-profile-pic-width: 206px;
     --staff-profile-pic-height: 234px;
+
+    /* Amount of text to display in the staff bios on the clinic and cafe pages before it scrolls */
+    --staff-bio-max-height: 400px;
 
     /* This is the amount of margin added to both sides of "facilities_personnel_skinny" to achieve a narrower effect on the daycre and salon pages (as opposed to the cafe and clinic pages) */
     --skinny-facilities-offset: 120px;
@@ -65,9 +69,34 @@ body {
     left: 0px;
     bottom: 0px;
 
-    font-size: x-small;
+    font-size: medium;
     font-family: 'Rexlia';
     color: var(--offwhite);
+}
+
+/* Credits stuff */
+
+#credits_dog {
+    position: relative;
+    top: 2px;
+    left: 3px;
+    z-index: 10;
+}
+
+#credits p {
+    text-align: left;
+}
+
+#credits a {
+    text-decoration: underline;
+}
+
+/* Credits stuff END */
+
+/* Inline links */
+span {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /* Snow configuration */
@@ -174,6 +203,11 @@ body {
     left: 22px;
 }
 
+/* Used on the about page */
+#ilion_logo {
+    width: 100%;
+}
+
 .backButton {
     height: 36px;
     width: 36px;
@@ -247,10 +281,16 @@ LANDING PAGE STUFF
 #credit {
     transform: rotate(270deg);
     transform-origin: top left;
-    margin-left: -25px;
+    margin-left: -30px;
     margin-top: -5px;
     font-family: "Nasalization";
+    font-style: italic;
+    font-size: 22px;
     color: white;
+
+    -webkit-text-stroke: 1px var(--light-blue);
+    -webkit-text-fill-color: white;
+    /* -webkit-text-fill-color: rgba(0, 0, 0, 0); */
 }
 
 #splash_decorations {
@@ -619,13 +659,14 @@ ul {
 #dog_name {
     position: fixed;
     top: 5%;
-    left: 425px;
+    left: 450px;
     writing-mode: vertical-lr;
     transform: rotateX(180deg) rotateY(180deg);
     -webkit-text-stroke: 1px var(--light-blue);
     -webkit-text-fill-color: rgba(0, 0, 0, 0);
     font-family: "Rexlia";
-    font-size: 112px;
+    font-size: 64px;
+    font-style: italic;
 }
 
 #gallery {
@@ -712,6 +753,8 @@ ul {
     max-width: 462px;
     border-radius: 10px;
     height: 60vh;
+    /* "margin-left: 0" used by jQuery to center the image but must be initialized to 0 here */
+    margin-left: 0;
 }
 
 #galleryFrame {
@@ -771,6 +814,13 @@ ul {
 
 /* For spacing and content reveal on the info page */
 .toggleInfo {
+    transform: translate(-10%, 0%);
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Identical class, needs different name for jQuery purposes */
+.musherToggleInfo {
     transform: translate(-10%, 0%);
     position: relative;
     transition: 0.3s;
@@ -859,6 +909,14 @@ ul {
     max-width: calc(var(--content-width) / 2);
 }
 
+/* Styling for the image + short text description */
+.facilities_blurb {
+    margin-left: var(--content-offset);
+    max-height: 460px;
+    width: var(--content-width);
+    display: flex;
+}
+
 /* Styling for the staff sections */
 .facilities_personnel {
     margin-left: var(--content-offset);
@@ -887,7 +945,7 @@ ul {
     float: left;
     padding: 10px;
     margin-right: 20px;
-    width: 20%;
+    /* width: 20%; */
 
     align-items: center;
 }
@@ -895,7 +953,7 @@ ul {
 /* Stuff for the ABOUT page */
 
 .ilion_map {
-    max-width: calc(var(--content-width) / 1.5);
+    max-width: calc(var(--content-width) / 1.6);
     border-radius: 20px;
 
     cursor: pointer;
@@ -919,6 +977,14 @@ ul {
     float: left;
     padding: 40px;
     width: 70%;
+    overflow-y: auto;
+}
+
+/* Confusingly named, this is for use on the favilities pages */
+/* The actual rightmost column on the about pge has since been renamed "mission_statement" */
+.about_right p {
+    font-size: 20px;
+    text-align: left;
 }
 
 .about_page_tabs {
@@ -1106,6 +1172,14 @@ ul {
     z-index: 1;
 }
 
+.scrolling_staff_bio {
+    max-height: var(--staff-bio-max-height);
+    overflow-y: auto;
+
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 7%, black 75%, transparent 89%);
+    mask-image: linear-gradient(to bottom, transparent 5%, black 10%, black 75%, transparent 89%);
+}
+
 /* A bunch of stuff for the CLINIC page END */
 
 /* Logo and mission statement on the ABOUT page */
@@ -1118,12 +1192,14 @@ ul {
 }
 
 .mission_statement {
-    height: 200px;
-    text-align: center;
+    max-height: 50vh;
+    text-align: left;
+    overflow-y: auto;
 }
 
 .mission_statement p {
     font-family: 'Rexlia';
+    font-size: 14px;
     color: var(--darkest-blue);
     line-height: 1.5;
     display: inline-block;
@@ -1224,10 +1300,13 @@ ul {
     margin-bottom: 15px;
 }
 
+.blog_textbox .inline_img {
+    border-radius: 10px;
+}
+
 .blog_textbox p {
     text-align: left;
     font-size: medium;
-    font-family: "Rexlia";
 }
 
 #blog_title {
@@ -1368,6 +1447,12 @@ cursor: pointer;
 
 .freebie_container {
     margin-left: var(--content-offset);
+    height: 100%;
+    width: var(--content-width);
+
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
 }
 
 .freebie_image {
@@ -1383,9 +1468,21 @@ cursor: pointer;
 }
 
 .coming_soon {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    height: 100%;
+
     margin-left: auto;
     margin-right: auto;
+
+    -webkit-text-stroke: 1px var(--light-blue);
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    font-family: "Rexlia";
+    font-size: 100px;
+    font-style: italic;
 }
 
 /* Results Page */
@@ -1412,6 +1509,12 @@ cursor: pointer;
     position: absolute;
 }
 
+.raceNext {
+    font-family: "Rexlia";
+    font-size: large;
+    font-style: italic;
+}
+
 .raceYear {
     font-family: "Rexlia";
 }
@@ -1424,6 +1527,7 @@ cursor: pointer;
 
 .resultsFooter {
     display: block;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
 }

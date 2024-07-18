@@ -1,13 +1,13 @@
 <div id="main">
     <img class="facilities_about" src="{{url_for ('static' , filename='clinic_about.png')}}" alt="Clinic Header"/>
 
-    <div class="facilities_personnel">
+    <div class="facilities_blurb">
         <div class="about_left">
             <img class="facilities_image" src="{{url_for ('static' , filename='clinic.png')}}" alt="Outside the Clinic">
         </div>
         <div class="about_right">
             <p>
-                Straight down the road after passing through the gates of the Ilion sanctuary, you'll find where our clinic stands- where it all began! Before our sanctuary grew to what it is today, our humble clinic was all that occupied these grounds. It is a symbol of our desire, above all else, for animal welfare– a place of warmth, kindness, and healing. Our team is composed of professionally trained veterinarians, experienced with animals of all kinds. We offer routine check ups and diagnostics, vaccinations, dental services, microchipping, minor surgeries, and more – Please note that we are not an emergency hospital, however our staff is trained in critical care. We are open for the majority of the year sans major holidays, and accept both appointments and walk-in patients. Currently, we only accept US citizens.
+                &emsp;&emsp;Straight down the road after passing through the gates of the Ilion sanctuary, you'll find where our clinic stands- where it all began! Before our sanctuary grew to what it is today, our humble clinic was all that occupied these grounds. It is a symbol of our desire, above all else, for animal welfare– a place of warmth, kindness, and healing. Our team is composed of professionally trained veterinarians, experienced with animals of all kinds.<br>&emsp;&emsp;We offer routine check ups and diagnostics, vaccinations, dental services, microchipping, minor surgeries, and more – Please note that we are not an emergency hospital, however our staff is trained in critical care. We are open for the majority of the year sans major holidays, and accept both appointments and walk-in patients. Currently, we only accept US citizens.
             </p>
         </div>
     </div>
@@ -28,8 +28,10 @@
                 <p>
                     <strong>Lead Veterinarian</strong><br>
                     Hector is our lead vet, and the founder of the Ilion Sanctuary!<br>
-                    They have a whole page dedicated to them and their history leading up to the foundation of the Sanctuary.<br>
-                    <p onclick="load_view('musher')">Take a look here!</p>
+                    They have a whole page dedicated to them and their history leading up to the foundation of the Sanctuary.<br><br>
+                    <span onclick="load_view('musher')">Take a look here!</span>
+                    <br>
+                    <br>
                 </p>
             </div>
             <div class="clinic_column">
@@ -37,31 +39,49 @@
                     <img class="clinic_staff_image" src="{{url_for ('static' , filename='thumb_polina.png')}}">
                     <div class="clinic_staff_nametag"><em>Polina</em></div>
                 </div>
-                <p>
-                    <strong>Veterinarian</strong><br>
-                    Originally from Sitka, Polina is the second in command here at Ilion, and often takes over the clinic when Hector is out training and racing the team. The two have been close friends for some time, having met in Fairbanks during their days at university. Studying and sharing a passion for veterinary medicine, the two graduated together. Initially, she wanted to work at an existing veterinary practice in Anchorage. Hector had other plans regarding the start of their own practice, and she was asked if she would like to help them kick start the Ilion clinic, to which she agreed! From diagnosing illnesses, providing physical exams, and determining medications– Polina is an incredibly diligent and reputable veterinarian who, despite her rather cold demeanor, puts the well-being of her animal patients above all else, and handles everything with the utmost care and precision.<br>
-                    Her dog Suya can be seen around the office. Things can get stressful at the clinic, so she's training Suya to be a certified ESA! 
-                </p>
+                <div class="scrolling_staff_bio">
+                    <p>
+                        <strong>Veterinarian</strong><br>
+                        Originally from Sitka, Polina is the second in command here at Ilion, and often takes over the clinic when Hector is out training and racing the team. The two have been close friends for some time, having met in Fairbanks during their days at university. Studying and sharing a passion for veterinary medicine, the two graduated together. Initially, she wanted to work at an existing veterinary practice in Anchorage. Hector had other plans regarding the start of their own practice, and she was asked if she would like to help them kick start the Ilion clinic, to which she agreed! From diagnosing illnesses, providing physical exams, and determining medications– Polina is an incredibly diligent and reputable veterinarian who, despite her rather cold demeanor, puts the well-being of her animal patients above all else, and handles everything with the utmost care and precision.<br>
+                        Her dog Suya can be seen around the office. Things can get stressful at the clinic, so she's training Suya to be a certified ESA! 
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </p>
+                </div>
             </div>
             <div class="clinic_column">
                 <div class="clinic_staff_thumbnail">
                     <img class="clinic_staff_image" src="{{url_for ('static' , filename='thumb_dani.png')}}">
                     <div class="clinic_staff_nametag"><em>Dani</em></div>
                 </div>
-                <p>
-                    <strong>Vet Tech</strong><br>
-                    Hailing all the way from Philadelphia, Dani moved to Alaska with an interest in arctic and glacier worms! Her passion in parasitology led her into taking up studying animal health and care which resulted in her finding work here at Ilion.Her life's work is making sure that all patients and animals in the sanctuary are safe and healthy from any potential parasitic worms and bacteria– along with various other things, of course! She assists our veterinarians with exams, medications, and much more, and has authority to also oversee appointments with patients for lighter cases when the going gets busy, all with the approval of our lead vets.On her days off, she loves to travel outside of Diogenes to nearby glaciers to study more about the worms. She often brings them back for the dogs and staff to see and describes them with fascinated glee-but that's not everyone's cup of tea.
-                </p>
+                <div class="scrolling_staff_bio">
+                    <p>
+                        <strong>Vet Tech</strong><br>
+                        Hailing all the way from Philadelphia, Dani moved to Alaska with an interest in arctic and glacier worms! Her passion in parasitology led her into taking up studying animal health and care which resulted in her finding work here at Ilion.Her life's work is making sure that all patients and animals in the sanctuary are safe and healthy from any potential parasitic worms and bacteria– along with various other things, of course! She assists our veterinarians with exams, medications, and much more, and has authority to also oversee appointments with patients for lighter cases when the going gets busy, all with the approval of our lead vets.On her days off, she loves to travel outside of Diogenes to nearby glaciers to study more about the worms. She often brings them back for the dogs and staff to see and describes them with fascinated glee-but that's not everyone's cup of tea.
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </p>
+                </div>
             </div>
             <div class="clinic_column">
                 <div class="clinic_staff_thumbnail">
                     <img class="clinic_staff_image" src="{{url_for ('static' , filename='thumb_honami.png')}}">
                     <div class="clinic_staff_nametag"><em>Honami</em></div>
                 </div>
-                <p>
-                    <strong>Receptionist/Vet Tech</strong><br>
-                    From a young age, Honami has loved marine biology and had dreams of working at the marine center near the Sea of Okhotsk in Hokkaido. Being born in a military family, however, led to constant moving and changes in regards to her life situation.She eventually decided to move to Alaska after finishing college with a degree in animal health and marine biology. She was deeply interested in the marine life of the arctic, and eventually found her way to Diogenes. After falling in love with the town and its surroundings, she made it her home. Honami takes care of all of the Ilion clinic’s logistics, single-handedly managing paperwork, phone calls, and scheduling appointments. She’s a fast worker and is always on top of everything. With her expertise in animal health, she knows exactly how to set priorities for the animals that are most in need. Sometimes she personally assists the vets, but most of her work is done at reception in the front office. 
-                </p>
+                <div class="scrolling_staff_bio">
+                    <p>
+                        <strong>Receptionist/Vet Tech</strong><br>
+                        From a young age, Honami has loved marine biology and had dreams of working at the marine center near the Sea of Okhotsk in Hokkaido. Being born in a military family, however, led to constant moving and changes in regards to her life situation.She eventually decided to move to Alaska after finishing college with a degree in animal health and marine biology. She was deeply interested in the marine life of the arctic, and eventually found her way to Diogenes. After falling in love with the town and its surroundings, she made it her home. Honami takes care of all of the Ilion clinic’s logistics, single-handedly managing paperwork, phone calls, and scheduling appointments. She’s a fast worker and is always on top of everything. With her expertise in animal health, she knows exactly how to set priorities for the animals that are most in need. Sometimes she personally assists the vets, but most of her work is done at reception in the front office. 
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -73,7 +93,7 @@
                     <div class="clinic_staff_nametag"><em>Jacky</em></div>
                 </div>
                 <p>
-                    <strong>Breed:</strong> Labradoodle<br>
+                    <strong>Breed:</strong> Labradoodle<br><br>
                     The heart of the clinic, Jacky! She is the Ilion musher's personal assistant and also works as a support dog for the sled team. Though she was born deaf, the musher has taught her sign language, so she is easily able to navigate her daily life!
                 </p>
             </div>
@@ -83,7 +103,7 @@
                     <div class="clinic_staff_nametag"><em>Roxy</em></div>
                 </div>
                 <p>
-                    <strong>Breed:</strong> Miniature Schnauzer<br>
+                    <strong>Breed:</strong> Miniature Schnauzer<br><br>
                     Roxy is one of our beloved support dogs that you can always spot following closely behind Jacky- you could consider her Jacky's assistant! She's easily excitable and sometimes she can be quite clumsy, but that shouldn’t detract from the fact that she’s incredibly helpful and hardworking!
                 </p>
             </div>
@@ -93,7 +113,7 @@
                     <div class="clinic_staff_nametag"><em>Lotte</em></div>
                 </div>
                 <p>
-                    <strong>Breed:</strong> Rottweiler<br>
+                    <strong>Breed:</strong> Rottweiler<br><br>
                     Lotte is brimming with a calming aura. Due to this, she was trained to be a therapy dog to help anxious patients. She is mostly seen in the back of the clinic to accompany the vet staff during their appointments.
                 </p>
             </div>
@@ -103,8 +123,9 @@
                     <div class="clinic_staff_nametag"><em>Suya</em></div>
                 </div>
                 <p>
-                    <strong>Breed:</strong> Dachsund<br>
+                    <strong>Breed:</strong> Dachsund<br><br>
                     Suya belongs to our vet staff, Polina-she is currently being trained to become an emotional support dog. She roams the front office and stays closely by Polina. If you see her, feel free to say hello!
+                    <br><br><br>
                 </p>
             </div>
         </div>

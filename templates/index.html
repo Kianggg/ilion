@@ -18,8 +18,9 @@
                 <img src="{{url_for ('static' , filename='front_splash_5.png')}}" id="splash_art" alt="Welcome to Ilion!">
                 <figcaption id="credit"><a href="https://x.com/meatfriedsteak" target="_blank">artist: Meatfriedsteak</a></figcaption>
                 {% else %}
-                <img src="{{url_for ('static' , filename='front_splash_6.png')}}" id="splash_art" alt="Welcome to Ilion!">
-                <figcaption id="credit"><a href="https://x.com/ywyw_MNTL" target="_blank">artist: Soreyu</a></figcaption>
+                <!-- Soreyu's art is wide, so needs to be moved to the left slightly -->
+                <img style="margin-left: -50px;" src="{{url_for ('static' , filename='front_splash_6.png')}}" id="splash_art" alt="Welcome to Ilion!">
+                <figcaption style="margin-left: -80px;" id="credit"><a href="https://x.com/ywyw_MNTL" target="_blank">artist: Soreyu</a></figcaption>
                 {% endif %}
             </figure>
             <!--<img src="{{url_for ('static' , filename='future4sleddogs.png')}}" id="future" alt="We are building a future for sled dogs!">-->
@@ -31,11 +32,11 @@
             <div id="ticker">
                 <div class="ticker_wrap">
                     <div class="ticker_text">
-                      <div class="ticker_item">Lorem ipsum dolor sit amet.</div>
-                      <div class="ticker_item">Welcome to Team Ilion!</div>
-                      <div class="ticker_item">Maybe accordion ankle buyback melee tearoom staircase!</div>
-                      <div class="ticker_item">Words words words words words, you know?</div>
-                      <div class="ticker_item">Gluten-free mumblecore chambray mixtape food truck.</div>
+                      <div class="ticker_item">Welcome to the Ilion Sanctuary!</div>
+                      <div class="ticker_item">Training season is now in session!</div>
+                      <div class="ticker_item">Interviews are complete ~</div>
+                      <div class="ticker_item">Check out our blog!</div>
+                      <div class="ticker_item">Free stickers and emotes in the Support Us tab!</div>
                     </div>
                 </div>
                 <img src="{{url_for ('static' , filename='horizontal_line.png')}}" id="ticker_line">
