@@ -1135,6 +1135,7 @@ ul {
 }
 
 .clinic_column p {
+    text-align: left;
     margin-top: 30px;
 }
 
