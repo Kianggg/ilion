@@ -128,11 +128,15 @@
 <script>
     function centerGallery() {
         var galleryImageSize = $('#expandedImg').width();
+        alert(galleryImageSize)
         // This is hardcoded in the css for Desktop view
         var galleryMaxWidth = 462;
         if (galleryMaxWidth > galleryImageSize) {
             var emptySpace = galleryMaxWidth - galleryImageSize;
             $('#expandedImg').css("margin-left", (emptySpace / 2));
+        }
+        else {
+            $('#expandedImg').css("margin-left", 0);
         }
     };
 </script>
