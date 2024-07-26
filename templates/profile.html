@@ -1,11 +1,13 @@
 {% extends "/layout.html" %}
 
 {% block title %}
-    <a href="/team"><img src="{{ url_for ('static' , filename='back_button.png') }}" class="backButton" alt="Back to Team Page"></a>  {{ dog.name }}
+    {{ dog.name }}
 {% endblock %}
 
 {% block body %}
 <div id="aboutPageWrapper">
+
+    <!-- <a href="/team"><img src="{{ url_for ('static' , filename='back_button.png') }}" class="backButton" alt="Back to Team Page"></a> -->
 
     <!-- Image Gallery -->
 
@@ -128,7 +130,6 @@
 <script>
     function centerGallery() {
         var galleryImageSize = $('#expandedImg').width();
-        alert(galleryImageSize)
         // This is hardcoded in the css for Desktop view
         var galleryMaxWidth = 462;
         if (galleryMaxWidth > galleryImageSize) {
