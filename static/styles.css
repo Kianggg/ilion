@@ -3,12 +3,19 @@
     --light-blue: #67a1ff;
     --ilion-blue: #2c72f1;
     --dark-blue: #1105b4;
-    --darkest-blue: #080442;;
+    --darkest-blue: #080442;
     --gridlines: #f0f0f5;
 
     --transparent-ilion-blue: rgba(0, 77, 255, 0.8);
     --transparent-light-blue: rgba(103, 161, 255, 0.8);
     --transparent-dark-blue: rgba(17, 5, 180, 0.8);
+
+    --cafe-light: #E7D1C3;
+    --cafe-dark: #764A3D;
+    --daycare-light: #F5D1D5;
+    --daycare-dark: #DF96B1;
+    --salon-light: #F7DBA4;
+    --salon-dark: #F29700;
 
     --warm-grey: #383230;
     --offwhite: #e6e0d4;
@@ -64,7 +71,8 @@ body {
 }
 
 /* Version number */
-#version_number {
+#technical_info {
+    display: flex;
     position: absolute;
     left: 0px;
     bottom: 0px;
@@ -74,13 +82,20 @@ body {
     color: var(--offwhite);
 }
 
+#version_number {
+    position: relative;
+    top: 3px;
+    left: 3px;
+    z-index: 4;
+}
+
 /* Credits stuff */
 
 #credits_dog {
     position: relative;
-    top: 2px;
-    left: 3px;
-    z-index: 10;
+    top: -3px;
+    left: 8px;
+    z-index: 4;
 }
 
 #credits p {
@@ -111,25 +126,67 @@ span {
 
 /* Scrollbar Stuff */
 
-/* width */
 ::-webkit-scrollbar {
     width: 10px;
-  }
+}
   
-  /* Track */
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: var(--transparent-light-blue);
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--transparent-ilion-blue); 
-  }
+    border-radius: 4px;
+}
   
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--ilion-blue);
-  }
+::-webkit-scrollbar-thumb {
+    background: var(--transparent-ilion-blue);
+    border-radius: 8px;
+}
+
+#cafeView div::-webkit-scrollbar-track {
+    background: var(--cafe-light);
+    border-radius: 4px;
+}
+
+#cafeView div::-webkit-scrollbar-thumb {
+    background: var(--cafe-dark);
+    border-radius: 8px;
+}
+  
+#daycareView div::-webkit-scrollbar-thumb {
+    background: var(--daycare-dark);
+    border-radius: 8px;
+}
+
+#daycareView div::-webkit-scrollbar-track {
+    background: var(--daycare-light);
+    border-radius: 4px;
+}
+  
+#salonView div::-webkit-scrollbar-thumb {
+    background: var(--salon-dark);
+    border-radius: 8px;
+}
+
+#salonView div::-webkit-scrollbar-track {
+    background: var(--salon-light);
+    border-radius: 4px;
+}
+  
+@supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--transparent-ilion-blue) var(--transparent-light-blue);
+    }
+
+    #cafeView {
+        scrollbar-color: var(--cafe-dark) var(--cafe-light) ;
+    }
+    
+    #daycareView {
+        scrollbar-color: var(--daycare-dark) var(--daycare-light);
+    }
+    
+    #salonView {
+        scrollbar-color: var(--salon-dark) var(--salon-light) ;
+    }
+}
 
 /* End of Scrollbar Stuff */
 
@@ -162,7 +219,9 @@ span {
 #main {
     position: fixed;
     height: -webkit-fill-available;
+    height: -moz-available;
     width: -webkit-fill-available;
+    width: -moz-available;
     overflow-y: scroll;
     overflow-x: hidden;
     background-image: url("background_white.png");
@@ -494,8 +553,8 @@ ul {
 /* Thanks again to W3Schools for teaching me CSS */
 .grid-container {
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(var(--team-grid-cell-width), 1fr)); */
-    grid-template-columns: var(--team-grid-cell-width) var(--team-grid-cell-width) var(--team-grid-cell-width);
+    grid-template-columns: repeat(auto-fit, minmax(var(--team-grid-cell-width), 1fr));
+   
     grid-auto-rows: 0.2fr;
     gap: 20px 25px;
 
@@ -953,7 +1012,7 @@ ul {
 /* Stuff for the ABOUT page */
 
 .ilion_map {
-    max-width: calc(var(--content-width) / 1.6);
+    max-width: calc(var(--content-width) / 1.8);
     border-radius: 20px;
 
     cursor: pointer;
@@ -962,7 +1021,19 @@ ul {
   
 .ilion_map:hover {opacity: 0.7;}
 
-/* Copied but the for the about page */
+#about_team_img {
+    max-width: calc(var(--content-width) / 2.2);
+}
+
+#about_facilities_img {
+    max-width: calc(var(--content-width) / 2.2);
+}
+
+#about_sponsorship_img {
+    max-width: calc(var(--content-width) / 2.2);
+}
+
+/* Copied for the about page */
 .about_left {
     float: left;
     padding: 10px;
@@ -972,7 +1043,7 @@ ul {
     align-items: center;
 }
 
-/* Copied but the for the about page */
+/* Copied for the about page */
 .about_right {
     float: left;
     padding: 40px;
@@ -980,10 +1051,10 @@ ul {
     overflow-y: auto;
 }
 
-/* Confusingly named, this is for use on the favilities pages */
-/* The actual rightmost column on the about pge has since been renamed "mission_statement" */
+/* Confusingly named, this is for use on the facilities pages */
+/* The actual rightmost column on the about page has since been renamed "mission_statement" */
 .about_right p {
-    font-size: 20px;
+    font-size: 16px;
     text-align: left;
 }
 
@@ -1023,6 +1094,38 @@ ul {
     background-image: url("aboutbuttonlarge.png");
 }
 
+/* About page responsiveness */
+
+@media only screen and (max-width: 1400px) {
+    .facilities_personnel {
+        display: block;
+    }
+
+    .about_page_tabs {
+        display: block;
+    }
+
+    .mission_statement {
+        width: fit-content;
+    }
+
+    .ilion_map {
+        max-width: var(--content-width);
+    }
+
+    #about_team_img {
+        max-width: var(--content-width);
+    }
+    
+    #about_facilities_img {
+        max-width: var(--content-width);
+    }
+    
+    #about_sponsorship_img {
+        max-width: var(--content-width);
+    }
+}
+
 /* Styling for the slideshows, I got this from here: https://www.the-art-of-web.com/css/fading-slideshow-no-jquery/ */
 /* All slideshows need different id */
 #slideshow {
@@ -1031,8 +1134,8 @@ ul {
 }
 
 #daycare_slideshow {
-    height: var(--slideshow-height);
-    width: var(--slideshow-width);
+    height: 371px;
+    width: calc(var(--content-width) / 2);
 }
 
 #slideshow a {
@@ -1055,8 +1158,7 @@ ul {
 
 #daycare_slideshow a img {
     padding: 10px;
-    height: var(--slideshow-height);
-    width: var(--slideshow-width);
+    width: calc(var(--content-width) / 2);
 }
 
 #salon_slideshow a img {
@@ -1137,6 +1239,7 @@ ul {
 .clinic_column p {
     text-align: left;
     margin-top: 30px;
+    font-size: 16px;
 }
 
 .clinic_staff_thumbnail {
@@ -1166,12 +1269,66 @@ ul {
     margin-top: 80%;
     width: 80%;
 
-    background-color: var(--transparent-dark-blue);
     border: 2px solid var(--transparent-ilion-blue);
+    background-color: var(--transparent-dark-blue);
     border-radius: 10px;
 
     z-index: 1;
 }
+
+/* Color variants for facilities staff nametags */
+
+.cafe_staff_nametag {
+    text-decoration: none; 
+    text-align: center; 
+    font-family: "Rexlia";
+    font-size: x-large;
+    color: white;
+
+    margin-top: -27%;
+    width: 80%;
+
+    border: 2px solid var(--cafe-light);
+    background-color: var(--cafe-dark);
+    border-radius: 10px;
+
+    z-index: 1;
+}
+
+.daycare_staff_nametag {
+    text-decoration: none; 
+    text-align: center; 
+    font-family: "Rexlia";
+    font-size: x-large;
+    color: white;
+
+    margin-top: -27%;
+    width: 80%;
+
+    border: 2px solid var(--daycare-light);
+    background-color: var(--daycare-dark);
+    border-radius: 10px;
+
+    z-index: 1;
+}
+
+.salon_staff_nametag {
+    text-decoration: none; 
+    text-align: center; 
+    font-family: "Rexlia";
+    font-size: x-large;
+    color: white;
+
+    margin-top: -27%;
+    width: 80%;
+
+    border: 2px solid var(--salon-light);
+    background-color: var(--salon-dark);
+    border-radius: 10px;
+
+    z-index: 1;
+}
+
 
 .scrolling_staff_bio {
     max-height: var(--staff-bio-max-height);
@@ -1179,6 +1336,10 @@ ul {
 
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 7%, black 75%, transparent 89%);
     mask-image: linear-gradient(to bottom, transparent 5%, black 10%, black 75%, transparent 89%);
+}
+
+.scrolling_staff_bio p {
+    font-size: 16px;
 }
 
 /* A bunch of stuff for the CLINIC page END */
@@ -1276,7 +1437,7 @@ ul {
     margin-left: auto;
     margin-right: auto;
 
-    width: 100%;
+    width: 90%;
 }
 
 /* --------------------------------------------------------------------- */
@@ -1460,7 +1621,7 @@ cursor: pointer;
     display: block;
     margin: auto;
     margin-bottom: 20px;
-    width: 40vw;
+    max-height: 360px;
     transition: 0.2s;
 }
 
@@ -1503,11 +1664,19 @@ cursor: pointer;
 }
 
 .raceResults {
+    height: 730px;
+    width: 650px;
+
+    margin-top: 65px;
+    margin-left: auto;
+    margin-right: auto;
+
     display: block;
-    margin: auto;
+    
     left: 0;
     right: 0;
     position: absolute;
+    overflow: auto;
 }
 
 .raceNext {
@@ -1522,7 +1691,7 @@ cursor: pointer;
 
 .raceList {
     text-align: left;
-    margin-left: calc(var(--content-width) / 2.2);
+    margin-left: calc(var(--content-width) / 9.0);
     font-size: 18px;
 }
 
@@ -1544,4 +1713,26 @@ cursor: pointer;
     max-width: 462px;
     border-radius: 10px;
     height: 60vh;
+}
+
+/* This will live here until we figure out a mobile solution */
+/* In the meantime, we can just say that the lack of mobile */
+/* support is an rtistic choice meant to capture the ethos */
+/* of the old internet :) */
+
+#mobile_disclaimer {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--transparent-ilion-blue);
+
+    z-index: 5;
+
+    display: none;
+}
+
+@media (pointer:none), (pointer:coarse) {
+    #mobile_disclaimer {
+        display: block;
+    }
 }
