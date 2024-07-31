@@ -22,7 +22,12 @@
     </head>
 
     <body>
-        <!-- Varsion No. -->
+        <!-- Mobile Disclaimer -->
+        <div id="mobile_disclaimer">
+          <img id="no_mobile" src="{{ url_for ('static', filename='mobileview.png') }}">
+        </div>
+
+        <!-- Version No. -->
         <div id="technical_info">
           <div id="version_number" onclick="load_view('notes')">VERSION 1.0</div>
           <img id="credits_dog" onclick="load_view('contact')" src="{{url_for ('static' , filename='version_gif.gif')}}" alt="Sled dog running gif"/>
@@ -197,11 +202,6 @@
 
         <!-- Snow effect -->
         <div id="snow" data-count="400"></div>
-
-        <!-- Mobile Disclaimer -->
-        <div id="mobile_disclaimer">
-          <img id="no_mobile" src="{{ url_for ('static', filename='mobileview.png') }}">
-        </div>
 
         <!---------------------------------------->
         <!-- End of content, time for SCRIPTS!! -->

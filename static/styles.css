@@ -1721,14 +1721,25 @@ cursor: pointer;
 /* of the old internet :) */
 
 #mobile_disclaimer {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
     background-color: var(--transparent-ilion-blue);
 
     z-index: 5;
 
     display: none;
+}
+
+#no_mobile {
+    max-height: 100vh;
+    max-width: 100vw;
 }
 
 @media (pointer:none), (pointer:coarse) {
