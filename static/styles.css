@@ -219,8 +219,8 @@ span {
 #main {
     position: fixed;
     height: -webkit-fill-available;
-    height: -moz-available;
     width: -webkit-fill-available;
+    height: -moz-available;
     width: -moz-available;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -228,6 +228,7 @@ span {
     background-size: 50%;
     background-repeat: repeat-y;
 }
+
 
 .title {
     font-family: "Rexlia";
@@ -710,6 +711,8 @@ ul {
     position: fixed;
     height: -webkit-fill-available;
     width: -webkit-fill-available;
+    height: -moz-available;
+    width: -moz-available;
     overflow: hidden;
 
     display: flex;
